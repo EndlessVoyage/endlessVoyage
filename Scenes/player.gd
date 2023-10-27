@@ -23,6 +23,6 @@ func _process(delta):
 		$AnimatedSprite2D.animation = "idle"
 	
 	if velocity.x < 0:
-		$AnimatedSprite2D.flip_h = true
-	else:
 		$AnimatedSprite2D.flip_h = false
+	else:
+		$AnimatedSprite2D.flip_h = true
