@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://7qjcev48nt2n"]
+[gd_scene load_steps=7 format=3 uid="uid://7qjcev48nt2n"]
 
 [ext_resource type="Script" path="res://Scenes/player.gd" id="1_nws5r"]
 [ext_resource type="Texture2D" uid="uid://cm7273ol25w68" path="res://Assets/Player_Idle.png" id="2_nsl2a"]
+[ext_resource type="Texture2D" uid="uid://d1v3kj1ts83ka" path="res://Assets/walk_test_0.png" id="3_hl54y"]
+[ext_resource type="Texture2D" uid="uid://d2mai2hamwkhf" path="res://Assets/walk_test_1.png" id="4_em43v"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xe4l7"]
 animations = [{
@@ -13,7 +15,13 @@ animations = [{
 "name": &"idle",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_hl54y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_em43v")
+}],
 "loop": true,
 "name": &"walk",
 "speed": 5.0
@@ -28,7 +36,7 @@ script = ExtResource("1_nws5r")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(18, -85)
 sprite_frames = SubResource("SpriteFrames_xe4l7")
-animation = &"idle"
+animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(432, -261)
