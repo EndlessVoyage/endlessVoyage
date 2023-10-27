@@ -1,3 +1,44 @@
-[gd_scene format=3 uid="uid://cgrew1b0lxf4y"]
+[gd_scene load_steps=7 format=3 uid="uid://d4eheam372ip8"]
+
+[ext_resource type="Script" path="res://Scripts/machine_room.gd" id="1_tegky"]
+[ext_resource type="Texture2D" uid="uid://chh6p6khenncr" path="res://Assets/machineroom_background.png" id="2_triye"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_kg6w8"]
+a = Vector2(2599, 538)
+b = Vector2(-1232, 541)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_n4u5n"]
+a = Vector2(-1912, -523)
+b = Vector2(-1915, 421)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_o8ber"]
+a = Vector2(1913, -535)
+b = Vector2(1917, 538)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_exdo6"]
+size = Vector2(137, 516.5)
 
 [node name="MachineRoom" type="Node2D"]
+script = ExtResource("1_tegky")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 7)
+texture = ExtResource("2_triye")
+
+[node name="Node2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2DGround" type="CollisionShape2D" parent="Node2D"]
+position = Vector2(-687, -117)
+shape = SubResource("SegmentShape2D_kg6w8")
+
+[node name="CollisionShape2WallLeft" type="CollisionShape2D" parent="Node2D"]
+shape = SubResource("SegmentShape2D_n4u5n")
+
+[node name="CollisionShape2DWallRight" type="CollisionShape2D" parent="Node2D"]
+shape = SubResource("SegmentShape2D_o8ber")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Node2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
+position = Vector2(-1738.5, 158.25)
+shape = SubResource("RectangleShape2D_exdo6")
