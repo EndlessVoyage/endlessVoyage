@@ -12,34 +12,25 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
-    container:
-      image: barichello/godot-ci:latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup
-        run: |
-          mkdir -v -p ~/.local/share/godot/templates
-          mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/templates/${GODOT_VERSION}.stable
-      - name: Build
-        run: chmod +x ./build.sh && ./build.sh
-      - name: Upload Artifact Web
-        uses: actions/upload-artifact@v3
+
+      - name: export game
+        id: export
+        # Use latest version (see releases for all versions)
+        uses: firebelley/godot-export@v5.2.0
         with:
-          name: web
-          path: dist/web
-      - name: Upload Artifact Linux
-        uses: actions/upload-artifact@v3
+          godot_executable_download_url: https://downloads.tuxfamily.org/godotengine/4.1.2/Godot_v4.1.2-stable_linux.x86_64.zip 
+          godot_export_templates_download_url: https://downloads.tuxfamily.org/godotengine/4.1.2/Godot_v4.1.2-stable_export_templates.tpz
+          relative_project_path: ./
+          archive_output: true
+
+      - name: create release
+        uses: ncipollo/release-action@v1.12.0
         with:
-          name: linux
-          path: dist/linux
-      - name: Upload Artifact Windows
-        uses: actions/upload-artifact@v3
-        with:
-          name: windows
-          path: dist/windows          
-      - name: Deploy to GitHub Pages       
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: dist/web         
+          token: ${{ secrets.GITHUB_TOKEN }}
+          generateReleaseNotes: true
+          tag: ${{ github.ref_name }}
+          artifacts: ${{ steps.export.outputs.archive_directory }}/*        
 
