@@ -1,7 +1,7 @@
 name: "godot-ci export"
 on:
   push:
-    branches: [master]
+    branches: [main]
   workflow_dispatch:
 
 env:
