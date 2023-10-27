@@ -1,3 +1,8 @@
-[gd_scene format=3 uid="uid://hra2ovmtnnbg"]
+[gd_scene load_steps=2 format=3 uid="uid://hra2ovmtnnbg"]
+
+[ext_resource type="Script" path="res://Scripts/fire_extinguisher.gd" id="1_dbv2e"]
 
 [node name="FireExtinguisher" type="Node2D"]
+script = ExtResource("1_dbv2e")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
