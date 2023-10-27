@@ -25,14 +25,6 @@ jobs:
           relative_project_path: ./
           archive_output: true
 
-      - name: create release
-        uses: ncipollo/release-action@v1.12.0
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          generateReleaseNotes: true
-          tag: ${{ github.sha }}
-          artifacts: ${{ steps.export.outputs.archive_directory }}/*        
-
       - name: Deploy to GitHub Pages        
         uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
