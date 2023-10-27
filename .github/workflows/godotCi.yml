@@ -1,0 +1,45 @@
+name: "godot-ci export"
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+env:
+  GODOT_VERSION: 4.1.2
+  EXPORT_NAME: endlessVoyage
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    container:
+      image: barichello/godot-ci:latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@4v
+      - name: Setup
+        run: |
+          mkdir -v -p ~/.local/share/godot/templates
+          mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/templates/${GODOT_VERSION}.stable
+      - name: Build
+        run: chmod +x ./build.sh && ./build.sh
+      - name: Upload Artifact Web
+        uses: actions/upload-artifact@v3
+        with:
+          name: web
+          path: dist/web
+      - name: Upload Artifact Linux
+        uses: actions/upload-artifact@v3
+        with:
+          name: linux
+          path: dist/linux
+      - name: Upload Artifact Windows
+        uses: actions/upload-artifact@v3
+        with:
+          name: windows
+          path: dist/windows          
+      - name: Deploy to GitHub Pages       
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist/web         
+
