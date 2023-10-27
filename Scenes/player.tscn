@@ -40,17 +40,18 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_htf4b"]
-size = Vector2(820, 1938)
+size = Vector2(619, 1478.5)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_nws5r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(18, -85)
+position = Vector2(-105.5, -332)
+scale = Vector2(0.753, 0.753)
 sprite_frames = SubResource("SpriteFrames_xe4l7")
 animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(432, -261)
+position = Vector2(-67.5, -321.25)
 shape = SubResource("RectangleShape2D_htf4b")
 metadata/_edit_group_ = true
