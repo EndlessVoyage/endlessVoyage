@@ -28,4 +28,4 @@ jobs:
       - name: Deploy to GitHub Pages        
         uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
-          folder: build/web                  
+          folder: /home/runner/.local/share/godot/builds/web                  
