@@ -67,6 +67,10 @@ sprite_frames = SubResource("SpriteFrames_miyr6")
 autoplay = "default"
 frame_progress = 0.350749
 
+[node name="Timer" type="Timer" parent="Generator"]
+wait_time = 30.0
+autostart = true
+
 [node name="Node2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2DGround" type="CollisionShape2D" parent="Node2D"]
