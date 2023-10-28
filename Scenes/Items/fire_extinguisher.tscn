@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://hra2ovmtnnbg"]
 
 [ext_resource type="Script" path="res://Scripts/fire_extinguisher.gd" id="1_dbv2e"]
-[ext_resource type="Texture2D" uid="uid://d3v03sk0bfx8g" path="res://Assets/Fire_Extinguisher_.png" id="2_6wgla"]
+[ext_resource type="Texture2D" uid="uid://bf02hkkl3y0j8" path="res://Assets/Fire_Extinguisher_.png" id="2_6wgla"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ybnds"]
 size = Vector2(170, 325)

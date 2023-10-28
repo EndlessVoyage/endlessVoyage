@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://nekq50cigq5o"
-path="res://.godot/imported/Hand.png-998cb0d80f638e1cc874a0cd61694911.ctex"
+uid="uid://icdmnqp3tpof"
+path="res://.godot/imported/out of bounds.png-1a9bee322cff534d678ef228ff1059c1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Hand.png"
-dest_files=["res://.godot/imported/Hand.png-998cb0d80f638e1cc874a0cd61694911.ctex"]
+source_file="res://Assets/out of bounds.png"
+dest_files=["res://.godot/imported/out of bounds.png-1a9bee322cff534d678ef228ff1059c1.ctex"]
 
 [params]
 
