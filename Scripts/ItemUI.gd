@@ -16,3 +16,4 @@ func _process(_delta):
 func _on_recived_item(item):
 	if item == 1:
 		set_texture(item_tex1)
+		print("123")

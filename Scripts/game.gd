@@ -16,5 +16,5 @@ func _on_picked_up_item(item):
 	print(item)
 	if item == 1:
 		itemInSlot = 1
-		item_to_ui.emit(1)
+		item_to_ui.emit(itemInSlot)
 		
