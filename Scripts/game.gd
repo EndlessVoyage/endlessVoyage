@@ -13,8 +13,4 @@ func _process(_delta):
 signal item_to_ui(item)
 
 func _on_picked_up_item(item):
-	print(item)
-	if item == 1:
-		itemInSlot = 1
-		item_to_ui.emit(itemInSlot)
-		
+		item_to_ui.emit(item)
