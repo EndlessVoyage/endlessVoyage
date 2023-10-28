@@ -20,6 +20,7 @@ position = Vector2(-62.5, -912.5)
 scale = Vector2(2.5, 2.5)
 
 [node name="ItemUI" type="TextureRect" parent="Player"]
+light_mask = 2
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
