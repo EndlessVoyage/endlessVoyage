@@ -34,6 +34,9 @@ jobs:
             #      - name: Copy Linux zip to web deploy dir
             #        run: cp /home/runner/.local/share/godot/archives/linux.zip /home/runner/.local/share/godot/builds/web
 
+            #      - name: Copy Android zip to web deploy dir
+            #        run: cp /home/runner/.local/share/godot/archives/android.zip /home/runner/.local/share/godot/builds/web
+
       - name: Deploy to GitHub Pages        
         uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
