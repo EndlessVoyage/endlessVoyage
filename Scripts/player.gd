@@ -17,9 +17,11 @@ func _ready():
 func _process(delta):
 	var newVelocity = Vector2.ZERO
 
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("ui_accept"):		
 		for body in $Area2D.get_overlapping_bodies():
 			handle_action(body)
+			if body.name == "Generator" and gotFireExtinguisher:
+				extinguish()
 
 	if $AnimatedSprite2D.frame == 10:
 		starting_animation = false	
@@ -61,14 +63,13 @@ func _on_area_2d_body_entered(body):
 	handle_action(body)
 
 func handle_action(body: Node2D):
-	if body.name == "Generator" and gotFireExtinguisher:
-		extinguish()
 	var asset_type = ""
 	var args = []
 	if "ASSET_TYPE" in body:
 		asset_type = body["ASSET_TYPE"]
 	if "ARGS" in body:
 		args = body["ARGS"]
+	print(body.name)
 	if asset_type == "" or args == []:
 		return
 	if asset_type == "Killing_Object":
@@ -82,4 +83,7 @@ func handle_action(body: Node2D):
 	do_action.emit(asset_type, args)
 
 func extinguish():
-	pass
+	$AnimatedSprite2D.visible = false
+	$PlayerHolding.visible = true
+	$FireE.visible = true
+	$foam.visible = true
