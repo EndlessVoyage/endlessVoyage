@@ -3,16 +3,10 @@
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_nws5r"]
 [ext_resource type="Texture2D" uid="uid://bb5nvwqd08vyx" path="res://Assets/Burning_Player 1.png" id="2_4ampj"]
 [ext_resource type="Texture2D" uid="uid://ymm747caitu7" path="res://Assets/Player_Idle.png" id="2_nsl2a"]
-<<<<<<< HEAD
 [ext_resource type="Texture2D" uid="uid://bq006axv8t72o" path="res://Assets/Burning_Player 2.png" id="3_mhq3k"]
 [ext_resource type="Texture2D" uid="uid://c6sga8gdlq0f1" path="res://Assets/player_walk_0.png" id="3_pbx32"]
 [ext_resource type="Texture2D" uid="uid://shv5vnj847eh" path="res://Assets/Player_Standing_Up_1.png" id="3_r1ueb"]
 [ext_resource type="Texture2D" uid="uid://b1hhvqs48jrwu" path="res://Assets/Player_Idle 2.png" id="3_y57v3"]
-=======
-[ext_resource type="Texture2D" uid="uid://c6sga8gdlq0f1" path="res://Assets/player_walk_0.png" id="3_pbx32"]
-[ext_resource type="Texture2D" uid="uid://shv5vnj847eh" path="res://Assets/Player_Standing_Up_1.png" id="3_r1ueb"]
-[ext_resource type="Texture2D" uid="uid://d0xqbe31aikyj" path="res://Assets/Player_Idle 2.png" id="3_y57v3"]
->>>>>>> f3f38ac3ca47373854689b27fc904779dc8f93e4
 [ext_resource type="Texture2D" uid="uid://130pdo1cjbbk" path="res://Assets/player_walk_1.png" id="4_dcwqd"]
 [ext_resource type="Texture2D" uid="uid://befxyr1n2jv0t" path="res://Assets/Burning_Player 3.png" id="4_fyl80"]
 [ext_resource type="Texture2D" uid="uid://n54r4df6hqck" path="res://Assets/Player_Idle_3.png" id="4_lh4yl"]

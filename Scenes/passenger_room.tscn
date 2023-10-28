@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dq14kn8kgb2xv" path="res://Assets/passenger_room_background.png" id="1_pbr01"]
 [ext_resource type="Script" path="res://Scripts/Chandelier.gd" id="2_jiloi"]
-[ext_resource type="Texture2D" uid="uid://bu1hltpi44pax" path="res://Assets/Chandelier.png" id="3_7qlyx"]
+[ext_resource type="Texture2D" uid="uid://dta8qemeyqg0c" path="res://Assets/Chandelier.png" id="3_7qlyx"]
 [ext_resource type="Script" path="res://Scripts/passenger_room.gd" id="4_mydsu"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_yj8s5"]
