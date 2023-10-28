@@ -14,6 +14,4 @@ func _process(_delta):
 	pass
 
 func _on_recived_item(item):
-	if item == 1:
-		set_texture(item_tex1)
-		print("123")
+	set_texture(item.get_node("Sprite2D").texture)
