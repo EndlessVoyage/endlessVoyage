@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://7qjcev48nt2n"]
+[gd_scene load_steps=13 format=3 uid="uid://7qjcev48nt2n"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_nws5r"]
 [ext_resource type="Texture2D" uid="uid://ymm747caitu7" path="res://Assets/Player_Idle.png" id="2_nsl2a"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://130pdo1cjbbk" path="res://Assets/player_walk_1.png" id="4_dcwqd"]
 [ext_resource type="Texture2D" uid="uid://dg57lt34i2v82" path="res://Assets/player_walk_2.png" id="5_m65ci"]
 [ext_resource type="Texture2D" uid="uid://rl756h8sfldt" path="res://Assets/player_walk_3.png" id="6_7j81t"]
-[ext_resource type="Texture2D" uid="uid://nqe8kayuvcum" path="res://Assets/light.png" id="8_p3lhf"]
 [ext_resource type="AudioStream" uid="uid://cjgsvb6xqtlxa" path="res://Assets/sound/footsteps.mp3" id="8_we63j"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xe4l7"]
@@ -43,6 +42,14 @@ size = Vector2(619, 1478.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vsfs5"]
 size = Vector2(222, 270)
 
+[sub_resource type="Gradient" id="Gradient_a0o3h"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_h5dup"]
+gradient = SubResource("Gradient_a0o3h")
+fill = 1
+fill_from = Vector2(0.504587, 0.472477)
+fill_to = Vector2(0.610092, 0.665138)
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_nws5r")
 
@@ -68,9 +75,9 @@ shape = SubResource("RectangleShape2D_vsfs5")
 stream = ExtResource("8_we63j")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(21, -303)
-scale = Vector2(10.5977, 6.81641)
-blend_mode = 2
-texture = ExtResource("8_p3lhf")
+position = Vector2(-194.999, -411)
+scale = Vector2(161.719, 77.6875)
+blend_mode = 1
+texture = SubResource("GradientTexture2D_h5dup")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
