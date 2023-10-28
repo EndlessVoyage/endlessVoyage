@@ -25,7 +25,6 @@ jobs:
           relative_project_path: ./
           archive_output: true
 
-
       - name: Copy dirty Githubpages-Hack File to webs dir
         run: /home/runner/.local/share/enable-threads.js /home/runner/.local/share/godot/builds/web
 
