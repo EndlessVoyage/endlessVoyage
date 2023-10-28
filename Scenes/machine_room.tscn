@@ -32,7 +32,8 @@ position = Vector2(-1227, 244)
 scale = Vector2(0.585, 0.585)
 
 [node name="Generator" parent="." instance=ExtResource("4_ue8cj")]
-position = Vector2(225, 59)
+position = Vector2(225, 30)
+scale = Vector2(1, 1.2)
 
 [node name="Node2D" type="StaticBody2D" parent="."]
 

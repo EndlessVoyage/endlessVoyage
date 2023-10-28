@@ -14,7 +14,8 @@ func _ready():
 	$Area2D/CollisionShape2D.transform = player_transform
 	screen_size = Vector2(3840,1080)
 	$AnimatedSprite2D.play("standing_up")
-
+	get_parent().player_burns.connect(_burn)
+	
 func _process(delta):
 	var newVelocity = Vector2.ZERO
 
@@ -101,3 +102,8 @@ func extinguished(generator):
 	generator.get_node("Sprite2D").visible = false
 	generator.get_node("burned").visible = true
 	get_parent().get_node("Timer").stop()
+	
+signal burn_death
+func _burn():
+	$AnimatedSprite2D.play("burning")
+	starting_animation = true

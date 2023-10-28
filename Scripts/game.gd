@@ -13,6 +13,7 @@ var activeLevel: Node2D = null
 func _ready():
 	change_room("machine_room", true)
 	$Timer.connect("timeout", _on_timer_timeout)
+	$Timer2.connect("timeout",_death)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -39,8 +40,13 @@ func change_room(room = "", is_init = false):
 	else:
 		print("rescourse doesn't exist")
 	
+signal player_burns
 func _on_timer_timeout() -> void:
 	print("The Generator burned down. You died!")
+	player_burns.emit()
+	$Timer2.start()
+	
+func _death():
 	get_tree().reload_current_scene()
 	
 func on_death():
