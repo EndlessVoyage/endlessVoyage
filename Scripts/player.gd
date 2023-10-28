@@ -61,6 +61,8 @@ func _on_area_2d_body_entered(body):
 	handle_action(body)
 
 func handle_action(body: Node2D):
+	if body.name == "Generator" and gotFireExtinguisher:
+		extinguish()
 	var asset_type = ""
 	var args = []
 	if "ASSET_TYPE" in body:
@@ -68,7 +70,6 @@ func handle_action(body: Node2D):
 	if "ARGS" in body:
 		args = body["ARGS"]
 	if asset_type == "" or args == []:
-		print("-I- No asset type. Skip")
 		return
 	if asset_type == "Killing_Object":
 		get_tree().reload_current_scene()
@@ -80,3 +81,5 @@ func handle_action(body: Node2D):
 
 	do_action.emit(asset_type, args)
 
+func extinguish():
+	pass
