@@ -26,7 +26,7 @@ jobs:
           archive_output: true
 
       - name: Copy dirty Githubpages-Hack File to webs dir
-        run: /home/runner/.local/share/enable-threads.js /home/runner/.local/share/godot/builds/web
+        run: cp /home/runner/.local/share/enable-threads.js /home/runner/.local/share/godot/builds/web
 
       - name: Activate dirty Githubpages-File
         run: sed -i -e 's/<head>/<head><script src="enable-threads.js"><\/script>/g' index.html
