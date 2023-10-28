@@ -71,6 +71,8 @@ func handle_action(body: Node2D):
 	if asset_type == "" or args == []:
 		print("-I- No asset type. Skip")
 		return
+	if asset_type == "Killing_Object":
+		get_tree().reload_current_scene()
 	
 	do_action.emit(asset_type, args)
 
