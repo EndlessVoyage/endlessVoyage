@@ -49,11 +49,11 @@ jobs:
           folder:  /home/runner/work/endlessVoyage/endlessVoyage/dummyWeb                 
 
       - name: Deploy to itch.io
-        uses: KikimoraGames/itch-publish@v0.0.3
+        uses: manleydev/butler-publish-itchio-action@master 
         with:
-          butlerApiKey: ${{secrets.BUTLER_API_KEY}}
-          gameData: /home/runner/.local/share/godot/archives/web.zip
-          itchUsername: endlessvoyage
-          itchGameId: endlessvoyage
-          buildChannel: web
+          BUTLER_CREDENTIALS: ${{secrets.BUTLER_API_KEY}}
+          PACKAGE: /home/runner/.local/share/godot/builds/web
+          ITCH_USER: endlessvoyage
+          ITCH_GAME: endlessvoyage
+          CHANNEL: web
             
