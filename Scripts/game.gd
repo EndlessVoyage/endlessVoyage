@@ -10,12 +10,13 @@ const levels = {
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Player.picked_up.connect(_on_picked_up_item)
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
 
-func _on_picked_up_item(item):
-		item_to_ui.emit(item)
-
+func _on_player_do_action(asset_type, args):
+	match asset_type:
+		"item": 
+			item_to_ui.emit(args[0])

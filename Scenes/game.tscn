@@ -53,3 +53,5 @@ texture = ExtResource("7_mykl0")
 [node name="OutOfBounds2" type="Sprite2D" parent="."]
 position = Vector2(4786, 542)
 texture = ExtResource("7_mykl0")
+
+[connection signal="do_action" from="Player" to="." method="_on_player_do_action"]
