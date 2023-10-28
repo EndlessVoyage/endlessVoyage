@@ -2,6 +2,11 @@ extends CharacterBody2D
 
 @export var speed = 400
 
+func _ready():
+	# Size of area always size of player collision
+	var player_transform = get_node("CollisionShape2D").transform
+	get_node("Area2D/CollisionShape2D").transform = player_transform
+
 func _process(delta):
 	var velocity = Vector2.ZERO
 	if Input.is_action_pressed("right"):
