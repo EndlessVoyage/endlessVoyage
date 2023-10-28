@@ -10,31 +10,36 @@ func _ready():
 	screen_size = Vector2(3840,1080)
 
 func _process(delta):
-	var velocity = Vector2.ZERO
+	var newVelocity = Vector2.ZERO
 	if Input.is_action_pressed("right"):
-		velocity.x += 1
+		newVelocity.x += 1
 	if Input.is_action_pressed("left"):
-		velocity.x -= 1
+		newVelocity.x -= 1
 
-	if velocity.length() > 0:
-		velocity = velocity.normalized() * speed
+	if newVelocity.length() > 0:
+		newVelocity = newVelocity.normalized() * speed
 		$AnimatedSprite2D.play()
 	else:
 		$AnimatedSprite2D.stop()
-	position += velocity * delta
+	position += newVelocity * delta
 	position = position.clamp(Vector2.ZERO, screen_size)
 	
-	if velocity.x != 0:
+	if newVelocity.x != 0:
 		$AnimatedSprite2D.animation = "walk"
 		$AnimatedSprite2D.flip_v = false
 	else:
 		$AnimatedSprite2D.animation = "idle"
 	
-	if velocity.x < 0:
+	if newVelocity.x < 0:
 		$AnimatedSprite2D.flip_h = false
 	else:
 		$AnimatedSprite2D.flip_h = true
 		
+	if $AnimatedSprite2D.is_playing() and !$AudioStreamPlayer2D.playing:
+		$AudioStreamPlayer2D.play()
+	elif !$AnimatedSprite2D.is_playing() and $AudioStreamPlayer2D.playing:
+		$AudioStreamPlayer2D.stop()
+	
 func start(pos):
 	position = pos
 	show()

@@ -7,7 +7,7 @@ func _ready():
 	$Player.picked_up.connect(_on_picked_up_item)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 	
 signal item_to_ui(item)

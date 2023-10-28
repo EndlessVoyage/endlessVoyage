@@ -2,7 +2,11 @@
 
 importer="mp3"
 type="AudioStreamMP3"
+<<<<<<< HEAD
 uid="uid://c8wh8n46txmaa"
+=======
+uid="uid://cfre5rif8pwik"
+>>>>>>> cdff76adc0b3f04754f379e881a877d70697ab86
 path="res://.godot/imported/fire_extinguisher.mp3-2ebccf4e7277492997d24571f6e98fb3.mp3str"
 
 [deps]

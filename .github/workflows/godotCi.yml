@@ -26,10 +26,10 @@ jobs:
           archive_output: true
 
       - name: Copy dirty Githubpages-Hack File to webs dir
-        run: cp /home/runner/work/endlessVoyage/endlessVoyage/coi-serviceworker.js /home/runner/.local/share/godot/builds/web
+        run: cp /home/runner/work/endlessVoyage/endlessVoyage/enable-threads.js /home/runner/.local/share/godot/builds/web
 
       - name: Activate dirty Githubpages-File
-        run: sed -i -e 's/<head>/<head><script src="coi-serviceworker.js"><\/script>/g' /home/runner/.local/share/godot/builds/web/index.html
+        run: sed -i -e 's/<head>/<head><script src="enable-threads.js"><\/script>/g' /home/runner/.local/share/godot/builds/web/index.html
 
             #      - name: Copy Windows zip to web deploy dir
             #        run: cp /home/runner/.local/share/godot/archives/win.zip /home/runner/.local/share/godot/builds/web
@@ -40,20 +40,11 @@ jobs:
             #      - name: Copy Android zip to web deploy dir
             #        run: cp /home/runner/.local/share/godot/archives/android.zip /home/runner/.local/share/godot/builds/web
 
-      - name: Copy index.html
-        run: mkdir /home/runner/work/endlessVoyage/endlessVoyage/dummyWeb && cp /home/runner/work/endlessVoyage/endlessVoyage/index.html /home/runner/work/endlessVoyage/endlessVoyage/dummyWeb
+          #      - name: Copy index.html
+          #        run: mkdir /home/runner/work/endlessVoyage/endlessVoyage/dummyWeb && cp /home/runner/work/endlessVoyage/endlessVoyage/index.html /home/runner/work/endlessVoyage/endlessVoyage/dummyWeb
 
       - name: Deploy to GitHub Pages        
         uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
-          folder:  /home/runner/work/endlessVoyage/endlessVoyage/dummyWeb                 
+          folder: /home/runner/.local/share/godot/builds/web                 
 
-      - name: Deploy to itch.io
-        uses: manleydev/butler-publish-itchio-action@master 
-        with:
-          BUTLER_CREDENTIALS: ${{secrets.BUTLER_API_KEY}}
-          PACKAGE: /home/runner/.local/share/godot/builds/web
-          ITCH_USER: endlessvoyage
-          ITCH_GAME: endlessvoyage
-          CHANNEL: web
-            

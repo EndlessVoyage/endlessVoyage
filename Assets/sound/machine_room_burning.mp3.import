@@ -2,7 +2,11 @@
 
 importer="mp3"
 type="AudioStreamMP3"
+<<<<<<< HEAD
 uid="uid://bu8x2hxobtus"
+=======
+uid="uid://c5ahh260bq1o0"
+>>>>>>> cdff76adc0b3f04754f379e881a877d70697ab86
 path="res://.godot/imported/machine_room_burning.mp3-d4961d68753f9c73e8b3974ba52d1e52.mp3str"
 
 [deps]

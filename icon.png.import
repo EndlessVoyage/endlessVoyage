@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvrw3q4n0hm6c"
-path="res://.godot/imported/Burning_Generator_3.png-a7a01e942037ebcb4924bb8aa5ffc826.ctex"
+uid="uid://bk0lbltj7m0kn"
+path="res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Burning_Generator_3.png"
-dest_files=["res://.godot/imported/Burning_Generator_3.png-a7a01e942037ebcb4924bb8aa5ffc826.ctex"]
+source_file="res://icon.png"
+dest_files=["res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex"]
 
 [params]
 

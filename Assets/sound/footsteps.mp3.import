@@ -2,7 +2,11 @@
 
 importer="mp3"
 type="AudioStreamMP3"
+<<<<<<< HEAD
 uid="uid://c4a3xv6k033hl"
+=======
+uid="uid://cjgsvb6xqtlxa"
+>>>>>>> cdff76adc0b3f04754f379e881a877d70697ab86
 path="res://.godot/imported/footsteps.mp3-95ada1ec2c7f8f7de55a151ba0772628.mp3str"
 
 [deps]
