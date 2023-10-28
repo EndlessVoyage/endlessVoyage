@@ -28,7 +28,8 @@ position = Vector2(0, 7)
 texture = ExtResource("2_triye")
 
 [node name="FireExtinguisher" parent="." instance=ExtResource("2_ift5f")]
-position = Vector2(-1239, 215)
+position = Vector2(-1227, 244)
+scale = Vector2(0.585, 0.585)
 
 [node name="Generator" parent="." instance=ExtResource("4_ue8cj")]
 position = Vector2(636, -52)
