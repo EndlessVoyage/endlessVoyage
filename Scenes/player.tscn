@@ -2,10 +2,9 @@
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_nws5r"]
 [ext_resource type="Texture2D" uid="uid://ymm747caitu7" path="res://Assets/Player_Idle.png" id="2_nsl2a"]
-[ext_resource type="Texture2D" uid="uid://bkaoaqlsg8qre" path="res://Assets/Player_Idle_2.png" id="3_kqld5"]
 [ext_resource type="Texture2D" uid="uid://c6sga8gdlq0f1" path="res://Assets/player_walk_0.png" id="3_pbx32"]
 [ext_resource type="Texture2D" uid="uid://shv5vnj847eh" path="res://Assets/Player_Standing_Up_1.png" id="3_r1ueb"]
-[ext_resource type="Texture2D" uid="uid://d15ahfnkpadsa" path="res://Assets/Player_Idle 2.png" id="3_y57v3"]
+[ext_resource type="Texture2D" uid="uid://d0xqbe31aikyj" path="res://Assets/Player_Idle 2.png" id="3_y57v3"]
 [ext_resource type="Texture2D" uid="uid://130pdo1cjbbk" path="res://Assets/player_walk_1.png" id="4_dcwqd"]
 [ext_resource type="Texture2D" uid="uid://cytgvfpj1viiv" path="res://Assets/Player_Idle_3.png" id="4_lh4yl"]
 [ext_resource type="Texture2D" uid="uid://2qj0sg4h3io6" path="res://Assets/Player_Standing_Up_2.png" id="4_op7he"]
@@ -141,12 +140,25 @@ scale = Vector2(0.333496, 0.450684)
 texture = ExtResource("19_hr6v3")
 flip_h = true
 
-[node name="foam" type="GPUParticles2D" parent="."]
+[node name="oldfoam" type="GPUParticles2D" parent="."]
 visible = false
 position = Vector2(-565, -355)
 amount = 500
 process_material = SubResource("ParticleProcessMaterial_3vcx1")
 lifetime = 5.0
+
+[node name="foam" type="CPUParticles2D" parent="."]
+visible = false
+position = Vector2(-568, -355)
+amount = 500
+lifetime = 5.0
+direction = Vector2(-10, -10)
+spread = 20.0
+gravity = Vector2(0, 10)
+initial_velocity_min = 200.0
+initial_velocity_max = 300.0
+scale_amount_min = 20.0
+scale_amount_max = 30.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-67.5, -321.25)
