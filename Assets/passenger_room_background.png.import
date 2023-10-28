@@ -2,20 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< HEAD
-uid="uid://gvd1rnhqywv1"
-=======
-uid="uid://bjy0335647gfq"
->>>>>>> 5cd7605 (all the imports)
-path="res://.godot/imported/Generator_Burned.png-5ba41002be84b063b6ca1f89626dc78e.ctex"
+uid="uid://cpbg1ll0y11ec"
+path="res://.godot/imported/passenger_room_background.png-cdfd800763f66133c6b058355dff8285.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Generator_Burned.png"
-dest_files=["res://.godot/imported/Generator_Burned.png-5ba41002be84b063b6ca1f89626dc78e.ctex"]
+source_file="res://Assets/passenger_room_background.png"
+dest_files=["res://.godot/imported/passenger_room_background.png-cdfd800763f66133c6b058355dff8285.ctex"]
 
 [params]
 
