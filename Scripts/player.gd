@@ -24,9 +24,9 @@ func _process(delta):
 		starting_animation = false	
 	if starting_animation == false:
 
-		if Input.is_action_pressed("right"):
+		if Input.is_action_pressed("ui_right"):
 			newVelocity.x += 1
-		if Input.is_action_pressed("left"):
+		if Input.is_action_pressed("ui_left"):
 			newVelocity.x -= 1
 
 		if newVelocity.length() > 0:
