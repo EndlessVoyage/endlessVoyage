@@ -31,6 +31,7 @@ position = Vector2(-3, 2.5)
 shape = SubResource("RectangleShape2D_ybnds")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+visible = false
 position = Vector2(-12, -60)
 amount = 5000
 process_material = SubResource("ParticleProcessMaterial_2nk6o")
