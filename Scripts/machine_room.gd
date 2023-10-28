@@ -1,7 +1,7 @@
 extends Node2D
 
-const ASSET_TYPE = "door"
-const TARGET_SCENE = "res://Scenes/passenger_room.tscn"
+@export var ASSET_TYPE = "door"
+@export var ARGS = ["passenger_room"]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

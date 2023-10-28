@@ -2,7 +2,11 @@ extends CharacterBody2D
 
 @export var speed = 700
 var screen_size
+<<<<<<< HEAD
 var starting_animation = true
+=======
+signal do_action(asset_type: String, arg)
+>>>>>>> 1c94087 (add attributes to do actions)
 
 func _ready():
 	# Size of area always size of player collision
@@ -13,6 +17,10 @@ func _ready():
 
 func _process(delta):
 	var newVelocity = Vector2.ZERO
+
+	if Input.is_action_just_pressed("ui_accept"):
+		for body in $Area2D.get_overlapping_bodies():
+			handle_action(body)
 
 	if $AnimatedSprite2D.frame == 10:
 		starting_animation = false	
@@ -63,3 +71,17 @@ func _on_area_2d_body_entered(body):
 	if "asset_type" in body:
 		if body.has_node("Sprite2D"):
 			picked_up.emit(body)
+
+func handle_action(body: Node2D):
+	var asset_type = ""
+	var args = {}
+	if "ASSET_TYPE" in body:
+		asset_type = body["ASSET_TYPE"]
+	if "ARGS" in body:
+		args = body["ARGS"]
+	if asset_type == "" or args == []:
+		print("-I- No asset type. Skip")
+		return
+	
+	do_action.emit(asset_type, args)
+

@@ -1,6 +1,10 @@
 extends Node
 
 var itemInSlot = 0
+const levels = {
+	"machine_room" = "res://Scenes/machine_room.tscn",
+	"passenger_room" = "res://Scenes/passenger_room.tscn"
+}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
