@@ -27,16 +27,9 @@ func _process(delta):
 	if starting_animation == false:
 
 		if Input.is_action_pressed("right"):
-			$PointLight2D.position.x = 1800
-			$PointLight2D.position.y = -500
 			newVelocity.x += 1
 		if Input.is_action_pressed("left"):
-			$PointLight2D.position.x = -2000
-			$PointLight2D.position.y = -500
 			newVelocity.x -= 1
-		if not Input.is_action_pressed("left") and not Input.is_action_pressed("right"):
-			$PointLight2D.position.x = 0
-			$PointLight2D.position.y = 300
 
 		if newVelocity.length() > 0:
 			newVelocity = newVelocity.normalized() * speed
