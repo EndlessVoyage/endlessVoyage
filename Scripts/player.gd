@@ -40,10 +40,10 @@ func start(pos):
 	show()
 	$CollisionShape2D.disabled = false
 
-signal picked_up
+signal picked_up(item)
 
 func _on_area_2d_body_entered(body):
 	print(body.has_method("asset_type"))
 	if "asset_type" in body:
 		print("Hat das Attribut")
-		picked_up.emit()
+		picked_up.emit("test")
