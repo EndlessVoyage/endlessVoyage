@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://diim7gkifuc7i"]
+[gd_scene load_steps=12 format=3 uid="uid://diim7gkifuc7i"]
 
 [ext_resource type="Script" path="res://Scripts/death_transition.gd" id="1_nnh40"]
 [ext_resource type="Texture2D" uid="uid://cc40gv0vbx1hl" path="res://Assets/Clock_1.png" id="2_o4h3b"]
@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://75717tdg14hw" path="res://Assets/Clock_6.png" id="7_q2s38"]
 [ext_resource type="Texture2D" uid="uid://cv82366mvj3ah" path="res://Assets/Clock_7.png" id="8_vqdjm"]
 [ext_resource type="Texture2D" uid="uid://18mkk413aprq" path="res://Assets/Clock_8.png" id="9_mdkvd"]
-[ext_resource type="Texture2D" uid="uid://tgqa2p8soxgb" path="res://Assets/Clock_9.png" id="10_i6sup"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y7qj0"]
 animations = [{
@@ -37,9 +36,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("9_mdkvd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_i6sup")
 }],
 "loop": true,
 "name": &"default",
@@ -52,11 +48,13 @@ animations = [{
 script = ExtResource("1_nnh40")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1010, 542)
+scale = Vector2(0.569824, 0.569824)
 sprite_frames = SubResource("SpriteFrames_y7qj0")
 frame = 1
 frame_progress = 0.559685
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1.39, 4.59)
+position = Vector2(1010, 542)
 scale = Vector2(3381, 1760)
 texture = SubResource("CanvasTexture_jqpbq")
