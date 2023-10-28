@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://dt0tjhw04udt2"
+=======
+uid="uid://blwce22c6cwsp"
+>>>>>>> 5cd7605 (all the imports)
 path="res://.godot/imported/Burning_Generator_2.png-f4ae83d814648034ee4c0746742bdbc3.ctex"
 metadata={
 "vram_texture": false
