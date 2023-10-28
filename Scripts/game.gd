@@ -42,3 +42,6 @@ func change_room(room = "", is_init = false):
 func _on_timer_timeout() -> void:
 	print("The Generator burned down. You died!")
 	get_tree().reload_current_scene()
+	
+func on_death():
+	pass
