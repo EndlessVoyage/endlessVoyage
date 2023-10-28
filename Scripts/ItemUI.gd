@@ -1,11 +1,8 @@
 extends TextureRect
 
-var item_tex0 = preload("res://Assets/ui_test_1.png")
-var item_tex1 = preload("res://Assets/Fire_Extinguisher_.png")
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	set_texture(item_tex0)
+	set_texture(preload("res://Assets/Hand.png"))
 	get_parent().get_parent().item_to_ui.connect(_on_recived_item)
 
 
