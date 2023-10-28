@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://7qjcev48nt2n"]
+[gd_scene load_steps=32 format=3 uid="uid://7qjcev48nt2n"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_nws5r"]
 [ext_resource type="Texture2D" uid="uid://bb5nvwqd08vyx" path="res://Assets/Burning_Player 1.png" id="2_4ampj"]
@@ -22,8 +22,8 @@
 [ext_resource type="Texture2D" uid="uid://bovv0ubytngvq" path="res://Assets/Player_Standing_Up_7.png" id="9_etobh"]
 [ext_resource type="Texture2D" uid="uid://vp2ay0ohh1e" path="res://Assets/Player_Standing_Up_8.png" id="10_i1rsa"]
 [ext_resource type="Texture2D" uid="uid://dbqw6aga8gu5e" path="res://Assets/Player_Standing_Up_9.png" id="11_fdho2"]
-[ext_resource type="Texture2D" uid="uid://dhusslnnwvyay" path="res://Assets/player holding item.png" id="18_8e32e"]
-[ext_resource type="Texture2D" uid="uid://q00ywd1mrbqr" path="res://Assets/Fire_Extinguisher_.png" id="19_hr6v3"]
+[ext_resource type="Texture2D" uid="uid://cyk6hgugia17c" path="res://Assets/player holding item.png" id="18_8e32e"]
+[ext_resource type="Texture2D" uid="uid://bf02hkkl3y0j8" path="res://Assets/Fire_Extinguisher_.png" id="19_hr6v3"]
 [ext_resource type="AudioStream" uid="uid://chhrdrpd8uhfl" path="res://Assets/sound/extinguish.mp3" id="21_s7amo"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xe4l7"]
@@ -153,6 +153,7 @@ animation = &"burning"
 
 [node name="PlayerHolding" type="Sprite2D" parent="."]
 visible = false
+scale = Vector2(0.753, 0.753)
 texture = ExtResource("18_8e32e")
 
 [node name="FireE" type="Sprite2D" parent="."]
