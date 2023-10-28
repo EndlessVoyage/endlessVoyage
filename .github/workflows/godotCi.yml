@@ -40,7 +40,17 @@ jobs:
             #      - name: Copy Android zip to web deploy dir
             #        run: cp /home/runner/.local/share/godot/archives/android.zip /home/runner/.local/share/godot/builds/web
 
-      - name: Deploy to GitHub Pages        
-        uses: JamesIves/github-pages-deploy-action@releases/v4
+          #      - name: Deploy to GitHub Pages        
+          #        uses: JamesIves/github-pages-deploy-action@releases/v4
+          #        with:
+          #          folder: /home/runner/.local/share/godot/builds/web                  
+
+      - name: Deploy to itch.io
+        uses: KikimoraGames/itch-publish@v0.0.3
         with:
-          folder: /home/runner/.local/share/godot/builds/web                  
+          butlerApiKey: ${{secrets.BUTLER_API_KEY}}
+          gameData: /home/runner/.local/share/godot/builds/web
+          itchUsername: endlessvoyage
+          itchGameId: endlessvoyage
+          buildChannel: web
+            
