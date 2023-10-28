@@ -102,6 +102,7 @@ func extinguished(generator):
 	$foam.visible = false
 	generator.get_node("Sprite2D").visible = false
 	generator.get_node("burned").visible = true
+	gotFireExtinguisher = false
 	get_parent().get_node("Timer").stop()
 	
 signal burn_death
