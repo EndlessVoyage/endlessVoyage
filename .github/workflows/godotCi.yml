@@ -29,7 +29,7 @@ jobs:
         run: cp /home/runner/work/endlessVoyage/endlessVoyage/enable-threads.js /home/runner/.local/share/godot/builds/web
 
       - name: Activate dirty Githubpages-File
-        run: sed -i -e 's/<head>/<head><script src="enable-threads.js"><\/script>/g' index.html
+        run: sed -i -e 's/<head>/<head><script src="enable-threads.js"><\/script>/g' /home/runner/.local/share/godot/builds/web/index.html
 
             #      - name: Copy Windows zip to web deploy dir
             #        run: cp /home/runner/.local/share/godot/archives/win.zip /home/runner/.local/share/godot/builds/web
