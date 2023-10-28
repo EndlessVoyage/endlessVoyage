@@ -35,6 +35,11 @@ func _process(delta):
 	else:
 		$AnimatedSprite2D.flip_h = true
 		
+	if $AnimatedSprite2D.is_playing() and !$AudioStreamPlayer2D.playing:
+		$AudioStreamPlayer2D.play()
+	elif !$AnimatedSprite2D.is_playing() and $AudioStreamPlayer2D.playing:
+		$AudioStreamPlayer2D.stop()
+	
 func start(pos):
 	position = pos
 	show()

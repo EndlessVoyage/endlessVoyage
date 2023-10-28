@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_ysnrm"]
 [ext_resource type="PackedScene" uid="uid://d4eheam372ip8" path="res://Scenes/machine_room.tscn" id="2_f0kri"]
 [ext_resource type="PackedScene" uid="uid://7qjcev48nt2n" path="res://Scenes/player.tscn" id="2_qgfq2"]
-[ext_resource type="Texture2D" uid="uid://ovu33vyhugs0" path="res://Assets/Feuerlöscher.png" id="4_1eygf"]
+[ext_resource type="Texture2D" uid="uid://ch12t51q3kjal" path="res://Assets/Feuerlöscher.png" id="4_1eygf"]
 [ext_resource type="Script" path="res://Scripts/ItemUI.gd" id="5_48iin"]
 
 [node name="Game" type="Node"]
