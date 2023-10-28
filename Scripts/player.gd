@@ -8,6 +8,8 @@ func _ready():
 	var player_transform = $CollisionShape2D.transform
 	$Area2D/CollisionShape2D.transform = player_transform
 	screen_size = Vector2(3840,1080)
+	$AnimatedSprite2D.animation = "standing_up"
+	$AnimatedSprite2D.play()
 
 func _process(delta):
 	var newVelocity = Vector2.ZERO
