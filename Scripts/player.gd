@@ -4,6 +4,7 @@ extends CharacterBody2D
 var screen_size
 var starting_animation = true
 var gotFireExtinguisher = false
+var timer = Timer.new()
 
 signal do_action(asset_type: String, args)
 
@@ -21,7 +22,7 @@ func _process(delta):
 		for body in $Area2D.get_overlapping_bodies():
 			handle_action(body)
 			if body.name == "Generator" and gotFireExtinguisher:
-				extinguish()
+				extinguish(body)
 
 	if $AnimatedSprite2D.frame == 10:
 		starting_animation = false	
@@ -69,7 +70,6 @@ func handle_action(body: Node2D):
 		asset_type = body["ASSET_TYPE"]
 	if "ARGS" in body:
 		args = body["ARGS"]
-	print(body.name)
 	if asset_type == "" or args == []:
 		return
 	if asset_type == "Killing_Object":
@@ -82,8 +82,22 @@ func handle_action(body: Node2D):
 
 	do_action.emit(asset_type, args)
 
-func extinguish():
+func extinguish(generator):
 	$AnimatedSprite2D.visible = false
 	$PlayerHolding.visible = true
 	$FireE.visible = true
 	$foam.visible = true
+	timer.connect("timeout", extinguished.bind(generator))
+	timer.wait_time = 4
+	timer.one_shot = true
+	add_child(timer)
+	timer.start()
+
+func extinguished(generator):
+	$AnimatedSprite2D.visible = true
+	$PlayerHolding.visible = false
+	$FireE.visible = false
+	$foam.visible = false
+	generator.get_node("Sprite2D").visible = false
+	generator.get_node("burned").visible = true
+	get_parent().get_node("Timer").stop()
