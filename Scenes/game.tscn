@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_ysnrm"]
 [ext_resource type="PackedScene" uid="uid://d4eheam372ip8" path="res://Scenes/machine_room.tscn" id="2_f0kri"]
 [ext_resource type="PackedScene" uid="uid://7qjcev48nt2n" path="res://Scenes/player.tscn" id="2_qgfq2"]
-[ext_resource type="Texture2D" uid="uid://d3v03sk0bfx8g" path="res://Assets/Fire_Extinguisher_.png" id="4_lm0dl"]
+[ext_resource type="Texture2D" uid="uid://byjvkgpbrw0me" path="res://Assets/ui_test_1.png" id="4_ypw23"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_ysnrm")
@@ -20,6 +20,7 @@ position = Vector2(-62.5, -912.5)
 scale = Vector2(2.5, 2.5)
 
 [node name="ItemUI" type="TextureRect" parent="Player"]
+light_mask = 2
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -33,7 +34,7 @@ grow_horizontal = 0
 grow_vertical = 0
 size_flags_horizontal = 8
 size_flags_vertical = 8
-texture = ExtResource("4_lm0dl")
+texture = ExtResource("4_ypw23")
 expand_mode = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

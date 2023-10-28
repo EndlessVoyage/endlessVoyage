@@ -51,4 +51,4 @@ func _on_area_2d_body_entered(body):
 	print(body.has_method("asset_type"))
 	if "asset_type" in body:
 		print("Hat das Attribut")
-		picked_up.emit("test")
+		picked_up.emit(1)
