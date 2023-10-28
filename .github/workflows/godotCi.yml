@@ -27,7 +27,7 @@ jobs:
 
 
       - name: Copy dirty Github-Hack File to webs dir
-        run: /home/runner/work/endlessVoyage/endlessVoyage/enable-threads.js /home/runner/.local/share/godot/builds/web
+        run: cp /home/runner/work/endlessVoyage/endlessVoyage/enable-threads.js /home/runner/.local/share/godot/builds/web
 
             #      - name: Copy Windows zip to web deploy dir
             #        run: cp /home/runner/.local/share/godot/archives/win.zip /home/runner/.local/share/godot/builds/web
