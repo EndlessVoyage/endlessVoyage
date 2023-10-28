@@ -11,7 +11,7 @@ var activeLevel: Node2D = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	change_room(levels.machine_room, true)
+	change_room("machine_room", true)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -28,8 +28,13 @@ func change_room(room = "", is_init = false):
 	if !is_init:
 		self.remove_child(activeLevel)
 		
-	if ResourceLoader.exists(room):
-		var result: Node2D = ResourceLoader.load(room).instantiate()
+	if ResourceLoader.exists(levels[room]):
+		var result: Node2D = ResourceLoader.load(levels[room]).instantiate()
 		activeLevel = result
-		result.position = Vector2(1922, 535)
+		var newPosition = Vector2(0,0)
+		if room == "machine_room":
+			newPosition = Vector2(1922, 535)
+		result.position = newPosition
 		self.add_child(result)
+	else:
+		print("rescourse doesn't exist")
