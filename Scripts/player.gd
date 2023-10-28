@@ -7,7 +7,7 @@ func _ready():
 	# Size of area always size of player collision
 	var player_transform = $CollisionShape2D.transform
 	$Area2D/CollisionShape2D.transform = player_transform
-	screen_size = Vector2(1920,1080)
+	screen_size = Vector2(3840,1080)
 
 func _process(delta):
 	var velocity = Vector2.ZERO
