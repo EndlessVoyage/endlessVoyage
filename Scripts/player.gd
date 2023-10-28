@@ -87,6 +87,7 @@ func extinguish(generator):
 	$PlayerHolding.visible = true
 	$FireE.visible = true
 	$foam.visible = true
+	$extinguishing.play()
 	timer.connect("timeout", extinguished.bind(generator))
 	timer.wait_time = 4
 	timer.one_shot = true
