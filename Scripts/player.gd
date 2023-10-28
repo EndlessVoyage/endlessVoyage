@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var speed = 700
 var screen_size
-var starting_animation = false
+var starting_animation = true
 
 func _ready():
 	# Size of area always size of player collision
@@ -15,24 +15,20 @@ func _process(delta):
 	var newVelocity = Vector2.ZERO
 
 	if $AnimatedSprite2D.frame == 10:
-		starting_animation = true	
-	if starting_animation == true:
+		starting_animation = false	
+	if starting_animation == false:
+
 		if Input.is_action_pressed("right"):
+			$PointLight2D.position.x = 1800
+			$PointLight2D.position.y = -500
 			newVelocity.x += 1
 		if Input.is_action_pressed("left"):
+			$PointLight2D.position.x = -2000
+			$PointLight2D.position.y = -500
 			newVelocity.x -= 1
-
-	if Input.is_action_pressed("right"):
-		$PointLight2D.position.x = 1800
-		$PointLight2D.position.y = -500
-		newVelocity.x += 1
-	if Input.is_action_pressed("left"):
-		$PointLight2D.position.x = -2000
-		$PointLight2D.position.y = -500
-		newVelocity.x -= 1
-	if not Input.is_action_pressed("left") and not Input.is_action_pressed("right"):
-		$PointLight2D.position.x = 0
-		$PointLight2D.position.y = 300
+		if not Input.is_action_pressed("left") and not Input.is_action_pressed("right"):
+			$PointLight2D.position.x = 0
+			$PointLight2D.position.y = 300
 
 		if newVelocity.length() > 0:
 			newVelocity = newVelocity.normalized() * speed
