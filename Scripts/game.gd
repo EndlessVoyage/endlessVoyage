@@ -12,6 +12,7 @@ var activeLevel: Node2D = null
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	change_room("machine_room", true)
+	$Timer.connect("timeout", _on_timer_timeout)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -37,3 +38,10 @@ func change_room(room = "", is_init = false):
 		self.add_child(result)
 	else:
 		print("rescourse doesn't exist")
+	
+func _on_timer_timeout() -> void:
+	print("The Generator burned down. You died!")
+	get_tree().reload_current_scene()
+	
+func on_death():
+	pass

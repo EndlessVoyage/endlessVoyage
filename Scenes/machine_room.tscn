@@ -1,3 +1,4 @@
+
 [gd_scene load_steps=15 format=3 uid="uid://d4eheam372ip8"]
 
 [ext_resource type="PackedScene" uid="uid://hra2ovmtnnbg" path="res://Scenes/Items/fire_extinguisher.tscn" id="2_ift5f"]

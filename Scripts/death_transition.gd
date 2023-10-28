@@ -8,11 +8,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
-
-signal chandelier_triggert
-
-func _on_trigger_body_entered(body):
-	chandelier_triggert.emit()
-	print("watch out")
-
+	var color = $Sprite2D.modulate;
+	var currentAlpha = color.a8;
+	var newColor = Color(color, 

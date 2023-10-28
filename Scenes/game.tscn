@@ -47,4 +47,8 @@ script = ExtResource("5_48iin")
 stream = ExtResource("6_qdklg")
 autoplay = true
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 30.0
+autostart = true
+
 [connection signal="do_action" from="Player" to="." method="_on_player_do_action"]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=24 format=3 uid="uid://7qjcev48nt2n"]
+[gd_scene load_steps=27 format=3 uid="uid://7qjcev48nt2n"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_nws5r"]
 [ext_resource type="Texture2D" uid="uid://ymm747caitu7" path="res://Assets/Player_Idle.png" id="2_nsl2a"]
 [ext_resource type="Texture2D" uid="uid://bkaoaqlsg8qre" path="res://Assets/Player_Idle_2.png" id="3_kqld5"]
 [ext_resource type="Texture2D" uid="uid://c6sga8gdlq0f1" path="res://Assets/player_walk_0.png" id="3_pbx32"]
 [ext_resource type="Texture2D" uid="uid://shv5vnj847eh" path="res://Assets/Player_Standing_Up_1.png" id="3_r1ueb"]
+[ext_resource type="Texture2D" uid="uid://d0xqbe31aikyj" path="res://Assets/Player_Idle 2.png" id="3_y57v3"]
 [ext_resource type="Texture2D" uid="uid://130pdo1cjbbk" path="res://Assets/player_walk_1.png" id="4_dcwqd"]
 [ext_resource type="Texture2D" uid="uid://cytgvfpj1viiv" path="res://Assets/Player_Idle_3.png" id="4_lh4yl"]
 [ext_resource type="Texture2D" uid="uid://2qj0sg4h3io6" path="res://Assets/Player_Standing_Up_2.png" id="4_op7he"]
@@ -18,6 +19,8 @@
 [ext_resource type="Texture2D" uid="uid://bovv0ubytngvq" path="res://Assets/Player_Standing_Up_7.png" id="9_etobh"]
 [ext_resource type="Texture2D" uid="uid://vp2ay0ohh1e" path="res://Assets/Player_Standing_Up_8.png" id="10_i1rsa"]
 [ext_resource type="Texture2D" uid="uid://dbqw6aga8gu5e" path="res://Assets/Player_Standing_Up_9.png" id="11_fdho2"]
+[ext_resource type="Texture2D" uid="uid://dhusslnnwvyay" path="res://Assets/player holding item.png" id="18_8e32e"]
+[ext_resource type="Texture2D" uid="uid://d3v03sk0bfx8g" path="res://Assets/Fire_Extinguisher_.png" id="19_hr6v3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xe4l7"]
 animations = [{
@@ -26,7 +29,7 @@ animations = [{
 "texture": ExtResource("2_nsl2a")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_kqld5")
+"texture": ExtResource("3_y57v3")
 }, {
 "duration": 1.0,
 "texture": ExtResource("4_lh4yl")
@@ -91,6 +94,17 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3vcx1"]
+particle_flag_disable_z = true
+direction = Vector3(-10, -10, 0)
+gravity = Vector3(0, 10, 0)
+initial_velocity_min = 200.0
+initial_velocity_max = 300.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 10.0
+scale_max = 50.0
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_htf4b"]
 size = Vector2(619, 1478.5)
 
@@ -114,7 +128,38 @@ script = ExtResource("1_nws5r")
 position = Vector2(-105.5, -332)
 scale = Vector2(0.753, 0.753)
 sprite_frames = SubResource("SpriteFrames_xe4l7")
-animation = &"standing_up"
+animation = &"idle"
+
+[node name="PlayerHolding" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("18_8e32e")
+
+[node name="FireE" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-412, -122)
+scale = Vector2(0.333496, 0.450684)
+texture = ExtResource("19_hr6v3")
+flip_h = true
+
+[node name="oldfoam" type="GPUParticles2D" parent="."]
+visible = false
+position = Vector2(-565, -355)
+amount = 500
+process_material = SubResource("ParticleProcessMaterial_3vcx1")
+lifetime = 5.0
+
+[node name="foam" type="CPUParticles2D" parent="."]
+visible = false
+position = Vector2(-568, -355)
+amount = 500
+lifetime = 5.0
+direction = Vector2(-10, -10)
+spread = 20.0
+gravity = Vector2(0, 10)
+initial_velocity_min = 200.0
+initial_velocity_max = 300.0
+scale_amount_min = 20.0
+scale_amount_max = 30.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-67.5, -321.25)
@@ -131,6 +176,7 @@ shape = SubResource("RectangleShape2D_vsfs5")
 stream = ExtResource("8_we63j")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
 position = Vector2(-63, -183)
 scale = Vector2(189.094, 114.812)
 blend_mode = 2
