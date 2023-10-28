@@ -4,6 +4,8 @@ extends CharacterBody2D
 var screen_size
 var starting_animation = true
 
+signal do_action(asset_type: String, arg)
+
 func _ready():
 	# Size of area always size of player collision
 	var player_transform = $CollisionShape2D.transform
@@ -14,21 +16,18 @@ func _ready():
 func _process(delta):
 	var newVelocity = Vector2.ZERO
 
+	if Input.is_action_just_pressed("ui_accept"):
+		for body in $Area2D.get_overlapping_bodies():
+			handle_action(body)
+
 	if $AnimatedSprite2D.frame == 10:
 		starting_animation = false	
 	if starting_animation == false:
 
-		if Input.is_action_pressed("right"):
-			$PointLight2D.position.x = 1800
-			$PointLight2D.position.y = -500
+		if Input.is_action_pressed("ui_right"):
 			newVelocity.x += 1
-		if Input.is_action_pressed("left"):
-			$PointLight2D.position.x = -2000
-			$PointLight2D.position.y = -500
+		if Input.is_action_pressed("ui_left"):
 			newVelocity.x -= 1
-		if not Input.is_action_pressed("left") and not Input.is_action_pressed("right"):
-			$PointLight2D.position.x = 0
-			$PointLight2D.position.y = 300
 
 		if newVelocity.length() > 0:
 			newVelocity = newVelocity.normalized() * speed
@@ -60,6 +59,20 @@ func start(pos):
 signal picked_up(item)
 
 func _on_area_2d_body_entered(body):
-	if "asset_type" in body:
+	if "ASSET_TYPE" in body and body["ASSET_TYPE"] == "item":
 		if body.has_node("Sprite2D"):
 			picked_up.emit(body)
+
+func handle_action(body: Node2D):
+	var asset_type = ""
+	var args = {}
+	if "ASSET_TYPE" in body:
+		asset_type = body["ASSET_TYPE"]
+	if "ARGS" in body:
+		args = body["ARGS"]
+	if asset_type == "" or args == []:
+		print("-I- No asset type. Skip")
+		return
+	
+	do_action.emit(asset_type, args)
+
