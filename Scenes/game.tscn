@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bte1rjhys7ocd"]
+[gd_scene load_steps=8 format=3 uid="uid://bte1rjhys7ocd"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_ysnrm"]
 [ext_resource type="PackedScene" uid="uid://d4eheam372ip8" path="res://Scenes/machine_room.tscn" id="2_f0kri"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://byjvkgpbrw0me" path="res://Assets/ui_test_1.png" id="4_ypw23"]
 [ext_resource type="Script" path="res://Scripts/ItemUI.gd" id="5_48iin"]
 [ext_resource type="AudioStream" uid="uid://bu8x2hxobtus" path="res://Assets/sound/machine_room_burning.mp3" id="6_qdklg"]
+[ext_resource type="Texture2D" uid="uid://icdmnqp3tpof" path="res://Assets/out of bounds.png" id="7_mykl0"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_ysnrm")
@@ -14,6 +15,7 @@ script = ExtResource("1_ysnrm")
 position = Vector2(1922, 535)
 
 [node name="Player" parent="." instance=ExtResource("2_qgfq2")]
+visible = false
 position = Vector2(1686, 907)
 scale = Vector2(0.4, 0.4)
 
@@ -43,3 +45,11 @@ script = ExtResource("5_48iin")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_qdklg")
 autoplay = true
+
+[node name="OutOfBounds" type="Sprite2D" parent="."]
+position = Vector2(-900, 542)
+texture = ExtResource("7_mykl0")
+
+[node name="OutOfBounds2" type="Sprite2D" parent="."]
+position = Vector2(4786, 542)
+texture = ExtResource("7_mykl0")
