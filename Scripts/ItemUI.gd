@@ -10,4 +10,4 @@ func _process(_delta):
 	pass
 
 func _on_recived_item(item):
-	set_texture(item.get_node("Sprite2D").texture)
+	set_texture(item.texture)

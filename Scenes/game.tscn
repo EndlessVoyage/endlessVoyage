@@ -3,9 +3,9 @@
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_ysnrm"]
 [ext_resource type="PackedScene" uid="uid://d4eheam372ip8" path="res://Scenes/machine_room.tscn" id="2_f0kri"]
 [ext_resource type="PackedScene" uid="uid://7qjcev48nt2n" path="res://Scenes/player.tscn" id="2_qgfq2"]
-[ext_resource type="Texture2D" uid="uid://cifgwq61xis7" path="res://Assets/Hand.png" id="4_tjkpu"]
+[ext_resource type="Texture2D" uid="uid://byjvkgpbrw0me" path="res://Assets/ui_test_1.png" id="4_ypw23"]
 [ext_resource type="Script" path="res://Scripts/ItemUI.gd" id="5_48iin"]
-[ext_resource type="AudioStream" uid="uid://bu8x2hxobtus" path="res://Assets/sound/machine_room_burning.mp3" id="6_qdklg"]
+[ext_resource type="AudioStream" uid="uid://dbo86djuapgme" path="res://Assets/sound/machine_room_burning.mp3" id="6_qdklg"]
 [ext_resource type="Texture2D" uid="uid://icdmnqp3tpof" path="res://Assets/out of bounds.png" id="7_mykl0"]
 
 [node name="Game" type="Node"]
@@ -13,14 +13,6 @@ script = ExtResource("1_ysnrm")
 
 [node name="MachineRoom" parent="." instance=ExtResource("2_f0kri")]
 position = Vector2(1922, 535)
-
-[node name="OutOfBounds2" type="Sprite2D" parent="."]
-position = Vector2(4786, 542)
-texture = ExtResource("7_mykl0")
-
-[node name="OutOfBounds" type="Sprite2D" parent="."]
-position = Vector2(-900, 542)
-texture = ExtResource("7_mykl0")
 
 [node name="Player" parent="." instance=ExtResource("2_qgfq2")]
 position = Vector2(1686, 907)
@@ -45,7 +37,7 @@ grow_horizontal = 0
 grow_vertical = 0
 size_flags_horizontal = 8
 size_flags_vertical = 8
-texture = ExtResource("4_tjkpu")
+texture = ExtResource("4_ypw23")
 expand_mode = 1
 script = ExtResource("5_48iin")
 
@@ -53,5 +45,12 @@ script = ExtResource("5_48iin")
 stream = ExtResource("6_qdklg")
 autoplay = true
 
-[node name="PassengerRoom" type="Node2D" parent="."]
-position = Vector2(1922, 535)
+[node name="OutOfBounds" type="Sprite2D" parent="."]
+position = Vector2(-900, 542)
+texture = ExtResource("7_mykl0")
+
+[node name="OutOfBounds2" type="Sprite2D" parent="."]
+position = Vector2(4786, 542)
+texture = ExtResource("7_mykl0")
+
+[connection signal="do_action" from="Player" to="." method="_on_player_do_action"]

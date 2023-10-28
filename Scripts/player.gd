@@ -4,7 +4,7 @@ extends CharacterBody2D
 var screen_size
 var starting_animation = true
 
-signal do_action(asset_type: String, arg)
+signal do_action(asset_type: String, args)
 
 func _ready():
 	# Size of area always size of player collision
@@ -56,16 +56,14 @@ func start(pos):
 	show()
 	$CollisionShape2D.disabled = false
 
-signal picked_up(item)
-
 func _on_area_2d_body_entered(body):
 	if "ASSET_TYPE" in body and body["ASSET_TYPE"] == "item":
 		if body.has_node("Sprite2D"):
-			picked_up.emit(body)
+			handle_action(body)
 
 func handle_action(body: Node2D):
 	var asset_type = ""
-	var args = {}
+	var args = []
 	if "ASSET_TYPE" in body:
 		asset_type = body["ASSET_TYPE"]
 	if "ARGS" in body:
