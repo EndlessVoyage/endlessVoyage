@@ -73,8 +73,6 @@ func handle_action(body: Node2D):
 		args = body["ARGS"]
 	if asset_type == "" or args == []:
 		return
-	if asset_type == "Killing_Object":
-		get_tree().reload_current_scene()
 		
 	if args:
 		if asset_type == "item":

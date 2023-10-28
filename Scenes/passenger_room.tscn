@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://dq14kn8kgb2xv" path="res://Assets/passenger_room_background.png" id="1_pbr01"]
 [ext_resource type="Script" path="res://Scripts/Chandelier.gd" id="2_jiloi"]
-[ext_resource type="Texture2D" uid="uid://n41x4ce7gwff" path="res://Assets/Chandelier.png" id="3_7qlyx"]
-[ext_resource type="Script" path="res://Scripts/passenger_room.gd" id="4_mydsu"]
+[ext_resource type="Texture2D" uid="uid://dta8qemeyqg0c" path="res://Assets/Chandelier.png" id="3_7qlyx"]
+[ext_resource type="Script" path="res://Scripts/trigger.gd" id="4_4hm4u"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_yj8s5"]
 a = Vector2(2599, 538)
@@ -26,7 +26,6 @@ b = Vector2(-685, 425)
 
 [node name="PassengerRoom" type="Node2D"]
 z_index = -1
-script = ExtResource("4_mydsu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_pbr01")
@@ -56,10 +55,11 @@ position = Vector2(-856.5, -348.875)
 shape = SubResource("RectangleShape2D_auj61")
 
 [node name="Trigger" type="Area2D" parent="."]
+script = ExtResource("4_4hm4u")
 
 [node name="CollisionShape2DTrigger" type="CollisionShape2D" parent="Trigger"]
 position = Vector2(-752, -1)
 shape = SubResource("SegmentShape2D_2ny8y")
-script = ExtResource("4_mydsu")
 
+[connection signal="body_entered" from="Trigger" to="Chandelier" method="_on_trigger_body_entered"]
 [connection signal="body_entered" from="Trigger" to="Trigger/CollisionShape2DTrigger" method="_on_trigger_body_entered"]

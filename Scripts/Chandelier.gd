@@ -1,13 +1,21 @@
 extends CharacterBody2D
 
 @export var ASSET_TYPE = "Killing_Object"
-const SPEED = 300.0
+@export var ARGS = [null] # needs to be set in _ready
+var falling = false
+const SPEED = 20.0
 func _ready():
-	get_parent().get_node("Trigger").chandelier_triggert.connect(_falling)
-
-func _process(delta):
 	pass
 
-func _falling():
-	print("test")
+func _process(delta):
+	if falling == true:
+		var newVelocity = Vector2.ZERO
+		newVelocity.y += 1
+		newVelocity = newVelocity.normalized() * SPEED
+		position += newVelocity
 
+
+func _on_trigger_body_entered(body):
+	print("achtung")
+	falling = true
+	

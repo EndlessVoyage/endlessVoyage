@@ -25,6 +25,8 @@ func _on_player_do_action(asset_type, args):
 			item_to_ui.emit(args[0])
 		"door":
 			change_room(args[0])
+		"Killing_Object":
+			_death()
 
 func change_room(room = "", is_init = false):
 	if !is_init:
