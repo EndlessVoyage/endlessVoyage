@@ -1,20 +1,19 @@
 [gd_scene load_steps=4 format=3 uid="uid://hra2ovmtnnbg"]
 
 [ext_resource type="Script" path="res://Scripts/fire_extinguisher.gd" id="1_dbv2e"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_wb7ia"]
+[ext_resource type="Texture2D" uid="uid://d3v03sk0bfx8g" path="res://Assets/Fire_Extinguisher_.png" id="2_6wgla"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ybnds"]
-size = Vector2(64, 79)
+size = Vector2(170, 325)
 
 [node name="FireExtinguisher" type="StaticBody2D"]
 script = ExtResource("1_dbv2e")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(22.5, 29)
-scale = Vector2(61, 76)
-texture = SubResource("PlaceholderTexture2D_wb7ia")
+position = Vector2(0, 1)
+scale = Vector2(0.15741, 0.15741)
+texture = ExtResource("2_6wgla")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(22, 29.5)
+position = Vector2(-3, 2.5)
 shape = SubResource("RectangleShape2D_ybnds")
