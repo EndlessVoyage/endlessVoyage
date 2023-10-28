@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var action = "extinquish"
+@export var asset_type = "item"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

@@ -64,3 +64,5 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-1, 2)
 shape = SubResource("RectangleShape2D_vsfs5")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
