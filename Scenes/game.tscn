@@ -14,6 +14,14 @@ script = ExtResource("1_ysnrm")
 [node name="MachineRoom" parent="." instance=ExtResource("2_f0kri")]
 position = Vector2(1922, 535)
 
+[node name="OutOfBounds" type="Sprite2D" parent="."]
+position = Vector2(-900, 542)
+texture = ExtResource("7_mykl0")
+
+[node name="OutOfBounds2" type="Sprite2D" parent="."]
+position = Vector2(4786, 542)
+texture = ExtResource("7_mykl0")
+
 [node name="Player" parent="." instance=ExtResource("2_qgfq2")]
 position = Vector2(1686, 907)
 scale = Vector2(0.4, 0.4)
@@ -44,13 +52,5 @@ script = ExtResource("5_48iin")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_qdklg")
 autoplay = true
-
-[node name="OutOfBounds" type="Sprite2D" parent="."]
-position = Vector2(-900, 542)
-texture = ExtResource("7_mykl0")
-
-[node name="OutOfBounds2" type="Sprite2D" parent="."]
-position = Vector2(4786, 542)
-texture = ExtResource("7_mykl0")
 
 [connection signal="do_action" from="Player" to="." method="_on_player_do_action"]
