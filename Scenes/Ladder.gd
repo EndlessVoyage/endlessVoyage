@@ -1,7 +1,4 @@
-extends Node2D
-
-const ASSET_TYPE = "door"
-const TARGET_SCENE = "res://Scenes/passenger_room.tscn"
+extends StaticBody2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -9,5 +6,5 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
+func _process(delta):
 	pass
