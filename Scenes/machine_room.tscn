@@ -1,6 +1,5 @@
-[gd_scene load_steps=10 format=3 uid="uid://d4eheam372ip8"]
+[gd_scene load_steps=14 format=3 uid="uid://86e7vue4q2t"]
 
-[ext_resource type="Script" path="res://Scripts/machine_room.gd" id="1_tegky"]
 [ext_resource type="PackedScene" uid="uid://hra2ovmtnnbg" path="res://Scenes/Items/fire_extinguisher.tscn" id="2_ift5f"]
 [ext_resource type="Texture2D" uid="uid://chh6p6khenncr" path="res://Assets/machineroom_background.png" id="2_triye"]
 [ext_resource type="PackedScene" uid="uid://c74jeslsoskby" path="res://Scenes/Environment/generator.tscn" id="4_ue8cj"]
@@ -48,7 +47,6 @@ size = Vector2(137, 516.5)
 
 [node name="MachineRoom" type="Node2D"]
 z_index = -1
-script = ExtResource("1_tegky")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 7)
@@ -59,7 +57,14 @@ position = Vector2(-1227, 244)
 scale = Vector2(0.585, 0.585)
 
 [node name="Generator" parent="." instance=ExtResource("4_ue8cj")]
-position = Vector2(894, -22)
+position = Vector2(636, -52)
+
+[node name="Sprite2D2" type="AnimatedSprite2D" parent="Generator"]
+position = Vector2(315, 225)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_miyr6")
+autoplay = "default"
+frame_progress = 0.350749
 
 [node name="Timer" type="Timer" parent="Generator"]
 wait_time = 30.0

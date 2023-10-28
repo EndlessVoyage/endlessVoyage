@@ -57,9 +57,7 @@ func start(pos):
 	$CollisionShape2D.disabled = false
 
 func _on_area_2d_body_entered(body):
-	if "ASSET_TYPE" in body and body["ASSET_TYPE"] == "item":
-		if body.has_node("Sprite2D"):
-			handle_action(body)
+	handle_action(body)
 
 func handle_action(body: Node2D):
 	var asset_type = ""
