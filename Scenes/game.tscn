@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://bte1rjhys7ocd"]
+[gd_scene load_steps=7 format=3 uid="uid://bte1rjhys7ocd"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_ysnrm"]
-[ext_resource type="PackedScene" uid="uid://d4eheam372ip8" path="res://Scenes/machine_room.tscn" id="2_f0kri"]
 [ext_resource type="PackedScene" uid="uid://7qjcev48nt2n" path="res://Scenes/player.tscn" id="2_qgfq2"]
 [ext_resource type="Texture2D" path="res://Assets/ui_test_1.png" id="4_ypw23"]
 [ext_resource type="Script" path="res://Scripts/ItemUI.gd" id="5_48iin"]
@@ -10,9 +9,6 @@
 
 [node name="Game" type="Node"]
 script = ExtResource("1_ysnrm")
-
-[node name="MachineRoom" parent="." instance=ExtResource("2_f0kri")]
-position = Vector2(1922, 535)
 
 [node name="OutOfBounds" type="Sprite2D" parent="."]
 position = Vector2(-900, 542)
