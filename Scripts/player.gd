@@ -4,6 +4,9 @@ extends CharacterBody2D
 var screen_size
 
 func _ready():
+	# Size of area always size of player collision
+	var player_transform = $CollisionShape2D.transform
+	$Area2D/CollisionShape2D.transform = player_transform
 	screen_size = Vector2(1920,1080)
 
 func _process(delta):
@@ -36,3 +39,8 @@ func start(pos):
 	position = pos
 	show()
 	$CollisionShape2D.disabled = false
+
+func _on_area_2d_body_entered(body):
+	print(body.has_method("asset_type"))
+	if "asset_type" in body:
+		print("Hat das Attribut")

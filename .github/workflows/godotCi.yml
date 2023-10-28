@@ -25,11 +25,18 @@ jobs:
           relative_project_path: ./
           archive_output: true
 
+
+      - name: Copy dirty Github-Hack File to webs dir
+        run: cp /home/runner/work/endlessVoyage/endlessVoyage/enable-threads.js /home/runner/.local/share/godot/builds/web
+
             #      - name: Copy Windows zip to web deploy dir
             #        run: cp /home/runner/.local/share/godot/archives/win.zip /home/runner/.local/share/godot/builds/web
 
             #      - name: Copy Linux zip to web deploy dir
             #        run: cp /home/runner/.local/share/godot/archives/linux.zip /home/runner/.local/share/godot/builds/web
+
+            #      - name: Copy Android zip to web deploy dir
+            #        run: cp /home/runner/.local/share/godot/archives/android.zip /home/runner/.local/share/godot/builds/web
 
       - name: Deploy to GitHub Pages        
         uses: JamesIves/github-pages-deploy-action@releases/v4
