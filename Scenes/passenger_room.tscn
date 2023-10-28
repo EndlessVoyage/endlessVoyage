@@ -1,3 +1,32 @@
-[gd_scene format=3 uid="uid://bcts3ndixomli"]
+[gd_scene load_steps=5 format=3 uid="uid://cueespbfoojqd"]
+
+[ext_resource type="Texture2D" uid="uid://dq14kn8kgb2xv" path="res://Assets/passenger_room_background.png" id="1_pbr01"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_yj8s5"]
+a = Vector2(2599, 538)
+b = Vector2(-1232, 541)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_grfsy"]
+a = Vector2(-1912, -523)
+b = Vector2(-1915, 421)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_gbig2"]
+a = Vector2(1913, -535)
+b = Vector2(1917, 538)
 
 [node name="PassengerRoom" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_pbr01")
+
+[node name="Node2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2DGround" type="CollisionShape2D" parent="Node2D"]
+position = Vector2(-687, -117)
+shape = SubResource("SegmentShape2D_yj8s5")
+
+[node name="CollisionShape2WallLeft" type="CollisionShape2D" parent="Node2D"]
+shape = SubResource("SegmentShape2D_grfsy")
+
+[node name="CollisionShape2DWallRight" type="CollisionShape2D" parent="Node2D"]
+shape = SubResource("SegmentShape2D_gbig2")
