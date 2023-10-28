@@ -1,7 +1,5 @@
-extends StaticBody2D
+extends CollisionShape2D
 
-@export var ASSET_TYPE = "door"
-@export var ARGS = ["passenger_room"]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -9,5 +7,10 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
+func _process(delta):
 	pass
+
+signal chandelier_triggert
+func _on_trigger_body_entered(body):
+	chandelier_triggert.emit()
+

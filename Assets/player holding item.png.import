@@ -2,16 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byjvkgpbrw0me"
-path="res://.godot/imported/ui_test_1.png-8960d4bfa484579dead085a03396eee6.ctex"
+<<<<<<< HEAD
+uid="uid://cwxcd7oyngcbr"
+=======
+uid="uid://bqoho1kh2qn62"
+>>>>>>> fecb5d890740acef0be551ef0a3c0db7c233afff
+path="res://.godot/imported/player holding item.png-b5eef40a25c81a09c14a0298d10d381b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ui_test_1.png"
-dest_files=["res://.godot/imported/ui_test_1.png-8960d4bfa484579dead085a03396eee6.ctex"]
+source_file="res://Assets/player holding item.png"
+dest_files=["res://.godot/imported/player holding item.png-b5eef40a25c81a09c14a0298d10d381b.ctex"]
 
 [params]
 

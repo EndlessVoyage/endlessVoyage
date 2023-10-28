@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_nws5r"]
 [ext_resource type="Texture2D" uid="uid://ymm747caitu7" path="res://Assets/Player_Idle.png" id="2_nsl2a"]
-[ext_resource type="Texture2D" uid="uid://dj435xj1we1ge" path="res://Assets/Player_Idle_2.png" id="3_kqld5"]
+[ext_resource type="Texture2D" uid="uid://bkaoaqlsg8qre" path="res://Assets/Player_Idle_2.png" id="3_kqld5"]
 [ext_resource type="Texture2D" uid="uid://c6sga8gdlq0f1" path="res://Assets/player_walk_0.png" id="3_pbx32"]
 [ext_resource type="Texture2D" uid="uid://shv5vnj847eh" path="res://Assets/Player_Standing_Up_1.png" id="3_r1ueb"]
 [ext_resource type="Texture2D" uid="uid://130pdo1cjbbk" path="res://Assets/player_walk_1.png" id="4_dcwqd"]
-[ext_resource type="Texture2D" uid="uid://n54r4df6hqck" path="res://Assets/Player_Idle_3.png" id="4_lh4yl"]
+[ext_resource type="Texture2D" uid="uid://cytgvfpj1viiv" path="res://Assets/Player_Idle_3.png" id="4_lh4yl"]
 [ext_resource type="Texture2D" uid="uid://2qj0sg4h3io6" path="res://Assets/Player_Standing_Up_2.png" id="4_op7he"]
 [ext_resource type="Texture2D" uid="uid://w2a7s0x87lde" path="res://Assets/Player_Standing_Up_3.png" id="5_dv687"]
 [ext_resource type="Texture2D" uid="uid://dg57lt34i2v82" path="res://Assets/player_walk_2.png" id="5_m65ci"]
@@ -115,7 +115,6 @@ position = Vector2(-105.5, -332)
 scale = Vector2(0.753, 0.753)
 sprite_frames = SubResource("SpriteFrames_xe4l7")
 animation = &"standing_up"
-frame_progress = 0.63724
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-67.5, -321.25)

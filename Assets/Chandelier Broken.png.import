@@ -2,20 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< HEAD
-uid="uid://11ye2478fqw2"
-=======
-uid="uid://8acw0uy2jf5w"
->>>>>>> 56aa92b09cb3166f4a2590aec065e6427af2614d
-path="res://.godot/imported/Chandelier.png-c640e67516f54558fb6992cdfa331426.ctex"
+uid="uid://bht1fnrclui7i"
+path="res://.godot/imported/Chandelier Broken.png-547618651befc84aefc4ba81e291de0b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Chandelier.png"
-dest_files=["res://.godot/imported/Chandelier.png-c640e67516f54558fb6992cdfa331426.ctex"]
+source_file="res://Assets/Chandelier Broken.png"
+dest_files=["res://.godot/imported/Chandelier Broken.png-547618651befc84aefc4ba81e291de0b.ctex"]
 
 [params]
 

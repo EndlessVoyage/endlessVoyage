@@ -57,9 +57,7 @@ func start(pos):
 	$CollisionShape2D.disabled = false
 
 func _on_area_2d_body_entered(body):
-	if "ASSET_TYPE" in body and body["ASSET_TYPE"] == "item":
-		if body.has_node("Sprite2D"):
-			handle_action(body)
+	handle_action(body)
 
 func handle_action(body: Node2D):
 	var asset_type = ""
@@ -71,6 +69,8 @@ func handle_action(body: Node2D):
 	if asset_type == "" or args == []:
 		print("-I- No asset type. Skip")
 		return
+	if asset_type == "Killing_Object":
+		get_tree().reload_current_scene()
 	
 	do_action.emit(asset_type, args)
 

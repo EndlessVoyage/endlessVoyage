@@ -1,14 +1,13 @@
-[gd_scene load_steps=15 format=3 uid="uid://d4eheam372ip8"]
+[gd_scene load_steps=14 format=3 uid="uid://86e7vue4q2t"]
 
-[ext_resource type="Script" path="res://Scripts/machine_room.gd" id="1_tegky"]
 [ext_resource type="PackedScene" uid="uid://hra2ovmtnnbg" path="res://Scenes/Items/fire_extinguisher.tscn" id="2_ift5f"]
 [ext_resource type="Texture2D" uid="uid://chh6p6khenncr" path="res://Assets/machineroom_background.png" id="2_triye"]
 [ext_resource type="PackedScene" uid="uid://c74jeslsoskby" path="res://Scenes/Environment/generator.tscn" id="4_ue8cj"]
-[ext_resource type="Texture2D" uid="uid://l1bd7hng4lw" path="res://Assets/Burning_Generator_1.png" id="5_3vf5m"]
+[ext_resource type="Texture2D" uid="uid://da7odornfma2w" path="res://Assets/Burning_Generator_1.png" id="5_3vf5m"]
 [ext_resource type="Script" path="res://Scenes/Ladder.gd" id="5_kpcn6"]
-[ext_resource type="Texture2D" uid="uid://dt0tjhw04udt2" path="res://Assets/Burning_Generator_2.png" id="6_ex8qe"]
-[ext_resource type="Texture2D" uid="uid://by6st7sc0gr6s" path="res://Assets/Burning_Generator_3.png" id="7_wdm05"]
-[ext_resource type="Texture2D" uid="uid://cn4fihu6cp65a" path="res://Assets/Burning_Generator_4.png" id="8_d73re"]
+[ext_resource type="Texture2D" uid="uid://bhiepjgmptlnh" path="res://Assets/Burning_Generator_2.png" id="6_ex8qe"]
+[ext_resource type="Texture2D" uid="uid://dvrw3q4n0hm6c" path="res://Assets/Burning_Generator_3.png" id="7_wdm05"]
+[ext_resource type="Texture2D" uid="uid://bh68g24gp8ha5" path="res://Assets/Burning_Generator_4.png" id="8_d73re"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_miyr6"]
 resource_name = "burning"
@@ -47,7 +46,7 @@ b = Vector2(1917, 538)
 size = Vector2(137, 516.5)
 
 [node name="MachineRoom" type="Node2D"]
-script = ExtResource("1_tegky")
+z_index = -1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 7)
