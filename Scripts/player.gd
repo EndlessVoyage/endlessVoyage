@@ -2,11 +2,9 @@ extends CharacterBody2D
 
 @export var speed = 700
 var screen_size
-<<<<<<< HEAD
 var starting_animation = true
-=======
+
 signal do_action(asset_type: String, arg)
->>>>>>> 1c94087 (add attributes to do actions)
 
 func _ready():
 	# Size of area always size of player collision
