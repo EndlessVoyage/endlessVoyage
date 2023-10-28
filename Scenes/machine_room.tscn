@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://d4eheam372ip8"]
+[gd_scene load_steps=9 format=3 uid="uid://d4eheam372ip8"]
 
 [ext_resource type="Script" path="res://Scripts/machine_room.gd" id="1_tegky"]
 [ext_resource type="PackedScene" uid="uid://hra2ovmtnnbg" path="res://Scenes/Items/fire_extinguisher.tscn" id="2_ift5f"]
 [ext_resource type="Texture2D" uid="uid://chh6p6khenncr" path="res://Assets/machineroom_background.png" id="2_triye"]
+[ext_resource type="PackedScene" uid="uid://c74jeslsoskby" path="res://Scenes/Environment/generator.tscn" id="4_ue8cj"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_kg6w8"]
 a = Vector2(2599, 538)
@@ -28,6 +29,9 @@ texture = ExtResource("2_triye")
 
 [node name="FireExtinguisher" parent="." instance=ExtResource("2_ift5f")]
 position = Vector2(-1239, 215)
+
+[node name="Generator" parent="." instance=ExtResource("4_ue8cj")]
+position = Vector2(636, -52)
 
 [node name="Node2D" type="StaticBody2D" parent="."]
 
