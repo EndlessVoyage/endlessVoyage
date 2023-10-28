@@ -33,8 +33,7 @@ func change_room(room = "", is_init = false):
 		var result: Node2D = ResourceLoader.load(levels[room]).instantiate()
 		activeLevel = result
 		var newPosition = Vector2(0,0)
-		if room == "machine_room":
-			newPosition = Vector2(1922, 535)
+		newPosition = Vector2(1922, 535)
 		result.position = newPosition
 		self.add_child(result)
 	else:

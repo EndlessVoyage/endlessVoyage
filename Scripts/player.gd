@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var speed = 700
 var screen_size
 var starting_animation = true
+var gotFireExtinguisher = false
 
 signal do_action(asset_type: String, args)
 
@@ -71,6 +72,11 @@ func handle_action(body: Node2D):
 		return
 	if asset_type == "Killing_Object":
 		get_tree().reload_current_scene()
-	
+		
+	if args:
+		if asset_type == "item":
+			if args[1] == "extinguish":
+				gotFireExtinguisher = true
+
 	do_action.emit(asset_type, args)
 
