@@ -25,9 +25,6 @@ jobs:
           relative_project_path: ./
           archive_output: true
 
-      - name: Rename web.html        
-        run: mv /home/runner/.local/share/godot/builds/web/web.html /home/runner/.local/share/godot/builds/web/index.html
-
             #      - name: Copy Windows zip to web deploy dir
             #        run: cp /home/runner/.local/share/godot/archives/win.zip /home/runner/.local/share/godot/builds/web
 
