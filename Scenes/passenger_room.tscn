@@ -31,6 +31,8 @@ z_index = -1
 texture = ExtResource("1_pbr01")
 
 [node name="Node2D" type="StaticBody2D" parent="."]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2DGround" type="CollisionShape2D" parent="Node2D"]
 position = Vector2(-687, -117)
@@ -43,6 +45,8 @@ shape = SubResource("SegmentShape2D_grfsy")
 shape = SubResource("SegmentShape2D_gbig2")
 
 [node name="Chandelier" type="CharacterBody2D" parent="."]
+collision_layer = 3
+collision_mask = 2
 script = ExtResource("2_jiloi")
 
 [node name="Sprite2D" type="Sprite2D" parent="Chandelier"]
@@ -58,7 +62,7 @@ shape = SubResource("RectangleShape2D_auj61")
 script = ExtResource("4_4hm4u")
 
 [node name="CollisionShape2DTrigger" type="CollisionShape2D" parent="Trigger"]
-position = Vector2(-752, -1)
+position = Vector2(-332, -3)
 shape = SubResource("SegmentShape2D_2ny8y")
 
 [connection signal="body_entered" from="Trigger" to="Chandelier" method="_on_trigger_body_entered"]
