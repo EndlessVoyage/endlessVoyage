@@ -55,7 +55,6 @@ func start(pos):
 signal picked_up(item)
 
 func _on_area_2d_body_entered(body):
-	print(body.has_method("asset_type"))
 	if "asset_type" in body:
 		if body.has_node("Sprite2D"):
 			picked_up.emit(body)
