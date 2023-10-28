@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://d4eheam372ip8"]
+[gd_scene load_steps=11 format=3 uid="uid://d4eheam372ip8"]
 
 [ext_resource type="Script" path="res://Scripts/machine_room.gd" id="1_tegky"]
 [ext_resource type="PackedScene" uid="uid://hra2ovmtnnbg" path="res://Scenes/Items/fire_extinguisher.tscn" id="2_ift5f"]
 [ext_resource type="Texture2D" uid="uid://chh6p6khenncr" path="res://Assets/machineroom_background.png" id="2_triye"]
 [ext_resource type="PackedScene" uid="uid://c74jeslsoskby" path="res://Scenes/Environment/generator.tscn" id="4_ue8cj"]
+[ext_resource type="Texture2D" uid="uid://da7odornfma2w" path="res://Assets/Burning_Generator_1.png" id="5_3vf5m"]
+[ext_resource type="Script" path="res://Scenes/Ladder.gd" id="5_kpcn6"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_kg6w8"]
 a = Vector2(2599, 538)
@@ -34,6 +36,11 @@ scale = Vector2(0.585, 0.585)
 [node name="Generator" parent="." instance=ExtResource("4_ue8cj")]
 position = Vector2(636, -52)
 
+[node name="Sprite2D2" type="Sprite2D" parent="Generator"]
+position = Vector2(315, 225)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_3vf5m")
+
 [node name="Node2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2DGround" type="CollisionShape2D" parent="Node2D"]
@@ -46,8 +53,9 @@ shape = SubResource("SegmentShape2D_n4u5n")
 [node name="CollisionShape2DWallRight" type="CollisionShape2D" parent="Node2D"]
 shape = SubResource("SegmentShape2D_o8ber")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Node2D"]
+[node name="Ladder" type="StaticBody2D" parent="Node2D"]
+script = ExtResource("5_kpcn6")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Ladder"]
 position = Vector2(-1738.5, 158.25)
 shape = SubResource("RectangleShape2D_exdo6")
