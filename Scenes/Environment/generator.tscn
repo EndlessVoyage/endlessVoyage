@@ -1,20 +1,44 @@
-[gd_scene load_steps=4 format=3 uid="uid://c74jeslsoskby"]
+[gd_scene load_steps=8 format=3 uid="uid://c74jeslsoskby"]
 
 [ext_resource type="Script" path="res://Scripts/generator.gd" id="1_1oe17"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_qe4ny"]
+[ext_resource type="Texture2D" uid="uid://da7odornfma2w" path="res://Assets/Burning_Generator_1.png" id="2_l1si2"]
+[ext_resource type="Texture2D" uid="uid://bhiepjgmptlnh" path="res://Assets/Burning_Generator_2.png" id="3_ln4pm"]
+[ext_resource type="Texture2D" uid="uid://dvrw3q4n0hm6c" path="res://Assets/Burning_Generator_3.png" id="4_7g643"]
+[ext_resource type="Texture2D" uid="uid://bh68g24gp8ha5" path="res://Assets/Burning_Generator_4.png" id="5_p0t0n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_stidt"]
-size = Vector2(652, 448.5)
+size = Vector2(496, 259)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_es340"]
+resource_name = "burning"
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_l1si2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ln4pm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7g643")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_p0t0n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Generator" type="StaticBody2D"]
 script = ExtResource("1_1oe17")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(325.75, 224.75)
-scale = Vector2(652.5, 450.5)
-texture = SubResource("PlaceholderTexture2D_qe4ny")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(327, 224.75)
+position = Vector2(249, 319.5)
 shape = SubResource("RectangleShape2D_stidt")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(268, 276)
+scale = Vector2(0.252516, 0.336426)
+sprite_frames = SubResource("SpriteFrames_es340")
+autoplay = "default"
