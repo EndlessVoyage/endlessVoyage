@@ -58,6 +58,7 @@ shape = SubResource("RectangleShape2D_auj61")
 [node name="Trigger" type="Area2D" parent="."]
 
 [node name="CollisionShape2DTrigger" type="CollisionShape2D" parent="Trigger"]
+position = Vector2(-752, -1)
 shape = SubResource("SegmentShape2D_2ny8y")
 script = ExtResource("4_mydsu")
 
