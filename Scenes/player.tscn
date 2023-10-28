@@ -43,12 +43,14 @@ size = Vector2(619, 1478.5)
 size = Vector2(222, 270)
 
 [sub_resource type="Gradient" id="Gradient_a0o3h"]
+offsets = PackedFloat32Array(0.587097, 0.993548)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_h5dup"]
 gradient = SubResource("Gradient_a0o3h")
 fill = 1
-fill_from = Vector2(0.504587, 0.472477)
-fill_to = Vector2(0.610092, 0.665138)
+fill_from = Vector2(0.5, 0.490826)
+fill_to = Vector2(0.270642, 0.504587)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_nws5r")
@@ -75,9 +77,9 @@ shape = SubResource("RectangleShape2D_vsfs5")
 stream = ExtResource("8_we63j")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(-194.999, -411)
-scale = Vector2(161.719, 77.6875)
-blend_mode = 1
+position = Vector2(-1629, -291)
+scale = Vector2(178.031, 77.6875)
+blend_mode = 2
 texture = SubResource("GradientTexture2D_h5dup")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
