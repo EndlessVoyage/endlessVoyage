@@ -115,7 +115,7 @@ position = Vector2(-105.5, -332)
 scale = Vector2(0.753, 0.753)
 sprite_frames = SubResource("SpriteFrames_xe4l7")
 animation = &"standing_up"
-frame_progress = 0.10397
+frame_progress = 0.63724
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-67.5, -321.25)
