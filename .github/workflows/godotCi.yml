@@ -36,9 +36,6 @@ jobs:
       - name: Copy Android zip to web deploy dir
         run: cp /home/runner/.local/share/godot/archives/android.zip /home/runner/.local/share/godot/builds/web
 
-      - name: Copy index.html
-        run: mkdir /home/runner/work/endlessVoyage/endlessVoyage/dummyWeb && cp /home/runner/work/endlessVoyage/endlessVoyage/index.html /home/runner/work/endlessVoyage/endlessVoyage/dummyWeb
-
       - name: Deploy to GitHub Pages        
         uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
