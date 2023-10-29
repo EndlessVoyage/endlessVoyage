@@ -120,7 +120,7 @@ shape = SubResource("RectangleShape2D_auj61")
 script = ExtResource("4_4hm4u")
 
 [node name="CollisionShape2DTrigger" type="CollisionShape2D" parent="Trigger"]
-position = Vector2(50, -3)
+position = Vector2(-15, -8)
 shape = SubResource("SegmentShape2D_2ny8y")
 
 [node name="piece_of_chandelier" type="StaticBody2D" parent="."]
