@@ -4,8 +4,9 @@ extends CharacterBody2D
 @export var ARGS = [null] # needs to be set in _ready
 var falling = false
 const SPEED = 20.0
+var picked_up = false
 func _ready():
-	pass
+	get_parent().get_parent().picked_up_chandelier.connect(_piece_picked_up)
 
 func _process(delta):
 	if falling == true:
@@ -15,9 +16,14 @@ func _process(delta):
 		position += newVelocity
 		move_and_slide()
 	if get_slide_collision_count() >= 1:
-		get_node("Sprite2D").set_texture(preload("res://Assets/Chandelier Broken.png"))
+		if picked_up == false:
+			get_node("Sprite2D").play("broken_shining")
 		ASSET_TYPE = "Misc_Object"
 		falling = false
-		
+
+func _piece_picked_up():
+	picked_up = true
+	get_node("Sprite2D").play("broken")
+
 func _on_trigger_body_entered(body):
 	falling = true
