@@ -1,10 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://d4eheam372ip8"]
+[gd_scene load_steps=12 format=3 uid="uid://86e7vue4q2t"]
 
 [ext_resource type="PackedScene" uid="uid://hra2ovmtnnbg" path="res://Scenes/Items/fire_extinguisher.tscn" id="2_ift5f"]
 [ext_resource type="Texture2D" uid="uid://chh6p6khenncr" path="res://Assets/machineroom_background.png" id="2_triye"]
 [ext_resource type="PackedScene" uid="uid://c74jeslsoskby" path="res://Scenes/Environment/generator.tscn" id="4_ue8cj"]
 [ext_resource type="Script" path="res://Scripts/Ladder.gd" id="4_wkces"]
 [ext_resource type="Texture2D" uid="uid://5m0p8x2wph2l" path="res://Assets/Beer.png" id="5_1jjcv"]
+[ext_resource type="Texture2D" uid="uid://dgnbl25spydvj" path="res://Assets/Generator_indicator.png" id="6_kiwup"]
+[ext_resource type="Texture2D" uid="uid://crj46bmq8mtuf" path="res://Assets/Generator_indicator pointer.png" id="7_kbaxi"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_kg6w8"]
 a = Vector2(2599, 538)
@@ -62,3 +64,16 @@ shape = SubResource("RectangleShape2D_exdo6")
 position = Vector2(-43, 338)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("5_1jjcv")
+
+[node name="Barometer" type="Node2D" parent="."]
+
+[node name="Base" type="Sprite2D" parent="Barometer"]
+position = Vector2(-18, -20)
+scale = Vector2(0.54541, 0.54541)
+texture = ExtResource("6_kiwup")
+
+[node name="Pointer" type="Sprite2D" parent="Barometer"]
+position = Vector2(-19, -26)
+rotation = 6.28319
+scale = Vector2(0.557617, 0.557617)
+texture = ExtResource("7_kbaxi")
