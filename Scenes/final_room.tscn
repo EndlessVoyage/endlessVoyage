@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cyeqj3sngvm5j"]
+[gd_scene load_steps=8 format=3 uid="uid://bg475pojgba2u"]
 
 [ext_resource type="Texture2D" uid="uid://dwekiigcvlb7f" path="res://Assets/final_room_background.png" id="1_ctclo"]
-[ext_resource type="Script" path="res://Scenes/finalnote.gd" id="2_55mqn"]
+[ext_resource type="Script" path="res://Scripts/finalnote.gd" id="2_w5wa2"]
 [ext_resource type="Texture2D" uid="uid://but4xv3dku1vj" path="res://Assets/Note in final room.png" id="3_beom6"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_lewg5"]
@@ -40,7 +40,7 @@ shape = SubResource("SegmentShape2D_e8g81")
 texture = ExtResource("1_ctclo")
 
 [node name="finalnote" type="StaticBody2D" parent="."]
-script = ExtResource("2_55mqn")
+script = ExtResource("2_w5wa2")
 
 [node name="Sprite2D" type="Sprite2D" parent="finalnote"]
 position = Vector2(-878, 0)

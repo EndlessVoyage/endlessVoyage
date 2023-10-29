@@ -112,7 +112,7 @@ func break_open(door):
 	$AnimatedSprite2D.play("door_breaking")
 	door.ASSET_TYPE = "door"
 	door.ARGS = ["final_room"]
-	$AudioStreamPlayer2D3.play()
+	$AudioStreamPlayer2D3.play() 
 	$AudioStreamPlayer2D4.play()
 	
 	

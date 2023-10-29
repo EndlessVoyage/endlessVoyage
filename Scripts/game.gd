@@ -65,7 +65,7 @@ func handle_item(item: Node2D, action: String):
 	if action == "break_open":
 		picked_up_chandelier.emit()
 	if action == "read":
-		_death()
+		get_tree().change_scene_to_file("res://Scenes/last_note.tscn")
 	if !item.has_node("Sprite2D"):
 		print("-E- Item doesn't contain a Sprite2D")
 	else:
