@@ -1,11 +1,17 @@
 # endlessVoyage
 This game was build on the [Hetzner Game Jam 2023](https://gamejam.hetzner.com)
 
-You can play it online here: https://endlessvoyage.de
-
 ![](gameScreenhot.png)
 
-You are a sailor waking up (drunk) on your ship. Everyone seems to be gone, and you're racing towards your death.
+### You are a sailor waking up (drunk) on your ship. Everyone seems to be gone, and you're racing towards your death.
+
+You can play it online here: https://endlessvoyage.de
+
+You can grab the binarys here:
+
+[Windows](https://endlessvoyage.de/win.zip)
+[Linux](https://endlessvoyage.de/linux.zip)
+[Android](https://endlessvoyage.de/android.zip)
 
 This game uses music from https://www.fesliyanstudios.com
 Namely:
