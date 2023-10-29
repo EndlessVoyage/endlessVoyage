@@ -43,6 +43,8 @@ func change_room(room = "", is_init = false):
 		newPosition = Vector2(1922, 535)
 		result.position = newPosition
 		self.add_child(result)
+		if room == "passenger_room":
+			$Player.position = Vector2(3338, 907)
 	else:
 		print("rescourse doesn't exist")
 	
