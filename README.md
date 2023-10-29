@@ -7,7 +7,15 @@ This game was build on the [Hetzner Game Jam 2023](https://gamejam.hetzner.com)
 
 You can play it online here: https://endlessvoyage.de
 
-The binarys can be downloaded here: [Releases](https://github.com/EndlessVoyage/endlessVoyage/releases)
+The binarys can be downloaded here: 
+
+[Windows](https://endlessvoyage.de/endlessvoyage_windows.zip)
+
+[Android](https://endlessvoyage.de/endlessvoyage_android.zip)
+
+[Linux](https://endlessvoyage.de/endlessvoyage_linux.zip)
+
+[Web](https://endlessvoyage.de/endlessvoyage_web.zip)
 
 ---
 
