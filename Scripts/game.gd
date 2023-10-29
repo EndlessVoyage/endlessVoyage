@@ -6,8 +6,10 @@ signal picked_up_chandelier
 var itemInSlot = {currentItem = "", action = ""}
 const levels = {
 	machine_room = "res://Scenes/machine_room.tscn",
-	passenger_room = "res://Scenes/passenger_room.tscn"
+	passenger_room = "res://Scenes/passenger_room.tscn",
+	final_room = "res://Scenes/final_room.tscn"
 }
+
 var activeLevel: Node2D = null
 const HAND_SPRITE = "res://Assets/Hand.png"
 
