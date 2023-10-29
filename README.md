@@ -9,7 +9,10 @@ You can play it online here: https://endlessvoyage.de
 
 The binarys can be downloaded here: [Releases](https://github.com/EndlessVoyage/endlessVoyage/releases)
 
+---
+
 This game uses music from https://www.fesliyanstudios.com
+
 Namely:
 - Predator & Prey by David Robson
 
