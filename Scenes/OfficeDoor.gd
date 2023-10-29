@@ -1,13 +1,17 @@
 extends StaticBody2D
 
-@export var ASSET_TYPE = "door"
-@export var ARGS = ["machine_room"]
+@export var state = "unsolved"
+@export var ASSET_TYPE = "puzzle"
+@export var ARGS = [null] # The action required to solve the puzzle
+const solution = "break_open"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	ARGS[0] = self
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
 
+func process_puzzle_solution(action: String):
+	return action == solution

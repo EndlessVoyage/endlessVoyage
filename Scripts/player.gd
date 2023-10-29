@@ -99,6 +99,10 @@ func extinguished(generator):
 	generator.get_node("burned").visible = true
 	gotFireExtinguisher = false
 	get_parent().get_node("Timer").stop()
+
+func break_open():
+	$AnimatedSprite2D.play("door_breaking")
+	
 	
 func solve_puzzle(puzzleNode: Node2D):
 	match puzzleNode.name:
