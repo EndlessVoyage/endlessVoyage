@@ -22,8 +22,8 @@ func _process(_delta):
 
 func _on_player_do_action(asset_type, args):
 	match asset_type:
-		"item": 
-			$Player/ItemUI.set_texture(args[0].texture)
+		"item":
+			handle_item(args[0])
 		"door":
 			change_room(args[0])
 		"Killing_Object":
@@ -51,6 +51,14 @@ func _on_timer_timeout() -> void:
 	
 func _death():
 	get_tree().change_scene_to_file("res://Scenes/death_transition.tscn")
-	
+
+func handle_item(item: Node2D):
+	if !item.has_node("Sprite2D"):
+		print("-E- Item doesn't contain a Sprite2D")
+	else:
+		$Player/ItemUI.set_texture(item.get_node("Sprite2D").texture)
+		
+	item.queue_free()
+
 func on_death():
 	pass
