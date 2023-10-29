@@ -7,7 +7,7 @@ extends StaticBody2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	ARGS[0] = $Sprite2D
+	ARGS[0] = self
 	visible = false
 
 
