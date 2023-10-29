@@ -1,3 +1,8 @@
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 name: "godot-ci export"
 on:
   push:
@@ -27,27 +32,21 @@ jobs:
       - name: Activate dirty Githubpages-File
         run: sed -i -e 's/<head>/<head><script src="enable-threads.js"><\/script>/g' /home/runner/.local/share/godot/builds/web/index.html
 
-      #- name: Copy Windows zip to web deploy dir
-        #run: cp /home/runner/.local/share/godot/archives/win.zip /home/runner/.local/share/godot/builds/web
+      - name: Copy Windows zip to web deploy dir
+        run: cp /home/runner/.local/share/godot/archives/win.zip /home/runner/.local/share/godot/builds/web
 
-      #- name: Copy Linux zip to web deploy dir
-        #run: cp /home/runner/.local/share/godot/archives/linux.zip /home/runner/.local/share/godot/builds/web
+      - name: Copy Linux zip to web deploy dir
+        run: cp /home/runner/.local/share/godot/archives/linux.zip /home/runner/.local/share/godot/builds/web
 
-      #- name: Copy Android zip to web deploy dir
-        #run: cp /home/runner/.local/share/godot/archives/android.zip /home/runner/.local/share/godot/builds/web
+      - name: Copy Android zip to web deploy dir
+        run: cp /home/runner/.local/share/godot/archives/android.zip /home/runner/.local/share/godot/builds/web
 
-      - name: Deploy to GitHub Pages        
-        uses: JamesIves/github-pages-deploy-action@releases/v4
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
         with:
-          folder: /home/runner/.local/share/godot/builds/web                 
+          path: /home/runner/.local/share/godot/builds/web/
+    
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2    
 
-      - name: Get Unix Timestamp
-        id: timestamp
-        run: echo "TIMESTAMP=$(date +%s)" >> $GITHUB_OUTPUT
-
-      - name: Create Release
-        uses: ncipollo/release-action@v1.12.0
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          tag: "${{ steps.timestamp.outputs.TIMESTAMP }}"
-          artifacts: ${{ steps.export.outputs.archive_directory }}/*
