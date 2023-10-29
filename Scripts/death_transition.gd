@@ -1,7 +1,7 @@
 extends Node2D
 
 var is_ascending = false
-const TRANSITION_SPEED = 3 # lower is faster
+const TRANSITION_SPEED = 1.5 # lower is faster
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

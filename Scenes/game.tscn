@@ -50,6 +50,6 @@ wait_time = 30.0
 autostart = true
 
 [node name="Timer2" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 2.0
 
 [connection signal="do_action" from="Player" to="." method="_on_player_do_action"]
