@@ -9,9 +9,9 @@
 [ext_resource type="Script" path="res://Scripts/piece_of_chandelier.gd" id="5_eel7x"]
 [ext_resource type="Texture2D" uid="uid://bht1fnrclui7i" path="res://Assets/Chandelier Broken.png" id="5_lm8hn"]
 [ext_resource type="Texture2D" uid="uid://32p8lwxwucq2" path="res://Assets/Broken Piece Of Chandelier.png" id="6_osei7"]
-[ext_resource type="Texture2D" uid="uid://dykpysirxilrs" path="res://Assets/_Chandelier_Broken shining 1.png" id="6_vkeu2"]
-[ext_resource type="Texture2D" uid="uid://dremoxiddoa4w" path="res://Assets/Chandelier_Broken shining 2.png" id="7_mails"]
-[ext_resource type="Texture2D" uid="uid://4je8y01irvn4" path="res://Assets/Chandelier_Broken shining 3.png" id="8_xdkas"]
+[ext_resource type="Texture2D" uid="uid://cn8o6fwlijdq7" path="res://Assets/_Chandelier_Broken shining 1.png" id="6_vkeu2"]
+[ext_resource type="Texture2D" uid="uid://dqtuonecljifk" path="res://Assets/Chandelier_Broken shining 2.png" id="7_mails"]
+[ext_resource type="Texture2D" uid="uid://ivxgtdyqqp02" path="res://Assets/Chandelier_Broken shining 3.png" id="8_xdkas"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_yj8s5"]
 a = Vector2(2599, 538)

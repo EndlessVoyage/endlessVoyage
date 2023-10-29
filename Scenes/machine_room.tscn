@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://Scripts/Ladder.gd" id="4_wkces"]
 [ext_resource type="Texture2D" uid="uid://5m0p8x2wph2l" path="res://Assets/Beer.png" id="5_1jjcv"]
 [ext_resource type="Script" path="res://Scripts/Barometer.gd" id="6_66nsk"]
-[ext_resource type="Texture2D" uid="uid://dgnbl25spydvj" path="res://Assets/Generator_indicator.png" id="6_kiwup"]
+[ext_resource type="Texture2D" uid="uid://bn1fhkss1fwof" path="res://Assets/Generator_indicator.png" id="6_kiwup"]
 [ext_resource type="Texture2D" uid="uid://mlwdfmbqwvtn" path="res://Assets/Generator_indicator pointer fixed.png" id="7_ilpiy"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_kg6w8"]
@@ -34,9 +34,12 @@ texture = ExtResource("2_triye")
 [node name="FireExtinguisher" parent="." instance=ExtResource("2_ift5f")]
 position = Vector2(-1227, 244)
 scale = Vector2(0.585, 0.585)
+collision_layer = 2
+collision_mask = 2
 
 [node name="Generator" parent="." instance=ExtResource("4_ue8cj")]
 position = Vector2(417, 59)
+collision_layer = 2
 
 [node name="Timer" type="Timer" parent="Generator"]
 wait_time = 30.0
@@ -45,7 +48,7 @@ autostart = true
 [node name="Node2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2DGround" type="CollisionShape2D" parent="Node2D"]
-position = Vector2(-687, -117)
+position = Vector2(-687, 0)
 shape = SubResource("SegmentShape2D_kg6w8")
 
 [node name="CollisionShape2WallLeft" type="CollisionShape2D" parent="Node2D"]
@@ -55,6 +58,9 @@ shape = SubResource("SegmentShape2D_n4u5n")
 shape = SubResource("SegmentShape2D_o8ber")
 
 [node name="Ladder" type="StaticBody2D" parent="Node2D"]
+disable_mode = 1
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("4_wkces")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Ladder"]
