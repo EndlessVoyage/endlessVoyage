@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://7qjcev48nt2n"]
+[gd_scene load_steps=36 format=3 uid="uid://7qjcev48nt2n"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_nws5r"]
 [ext_resource type="Texture2D" uid="uid://bb5nvwqd08vyx" path="res://Assets/Burning_Player 1.png" id="2_4ampj"]
@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://dhusslnnwvyay" path="res://Assets/player holding item.png" id="18_8e32e"]
 [ext_resource type="Texture2D" uid="uid://d3v03sk0bfx8g" path="res://Assets/Fire_Extinguisher_.png" id="19_hr6v3"]
 [ext_resource type="AudioStream" uid="uid://chhrdrpd8uhfl" path="res://Assets/sound/extinguish.mp3" id="21_s7amo"]
+[ext_resource type="AudioStream" uid="uid://p7cupsjan108" path="res://Assets/sound/cantperformaction.mp3" id="29_3icl4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xe4l7"]
 animations = [{
@@ -228,5 +229,9 @@ texture = SubResource("GradientTexture2D_h5dup")
 
 [node name="breakingtimer" type="Timer" parent="."]
 wait_time = 2.0
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("29_3icl4")
+volume_db = 16.865
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

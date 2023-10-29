@@ -3,7 +3,6 @@ extends CharacterBody2D
 @export var speed = 700
 var screen_size
 var starting_animation = true
-var gotFireExtinguisher = false
 var timer = Timer.new()
 
 signal do_action(asset_type: String, args)
@@ -22,8 +21,13 @@ func _process(delta):
 	var newVelocity = Vector2.ZERO
 
 	if Input.is_action_just_pressed("ui_accept"):		
-		for body in $Area2D.get_overlapping_bodies():
+		var bodys = $Area2D.get_overlapping_bodies()
+		for body in bodys:
 			handle_action(body)
+		
+		if bodys.size() == 1:
+			$AudioStreamPlayer2D2.play()
+				
 
 	if $AnimatedSprite2D.frame == 10:
 		starting_animation = false	
@@ -98,7 +102,7 @@ func extinguished(generator):
 	$foam.visible = false
 	generator.get_node("Sprite2D").visible = false
 	generator.get_node("burned").visible = true
-	gotFireExtinguisher = false
+	
 	get_parent().get_node("Timer").stop()
 
 func break_open():
