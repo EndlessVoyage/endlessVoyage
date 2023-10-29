@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jfmg70q6kujv"
-path="res://.godot/imported/Burning_Note 3.png-d41198cc52b6cdc14727cf6b792f3846.ctex"
+uid="uid://but4xv3dku1vj"
+path="res://.godot/imported/Note in final room.png-9283c87d1bfe8f2ef108d91d35c2dba2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Burning_Note 3.png"
-dest_files=["res://.godot/imported/Burning_Note 3.png-d41198cc52b6cdc14727cf6b792f3846.ctex"]
+source_file="res://Assets/Note in final room.png"
+dest_files=["res://.godot/imported/Note in final room.png-9283c87d1bfe8f2ef108d91d35c2dba2.ctex"]
 
 [params]
 

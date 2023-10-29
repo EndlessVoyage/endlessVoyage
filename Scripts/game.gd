@@ -67,6 +67,7 @@ func handle_item(item: Node2D, action: String):
 	else:
 		var spriteNode = item.get_node("Sprite2D")
 		$Player/ItemUI.set_texture(spriteNode.texture)
+		$AudioStreamPlayer2D.play()
 	itemInSlot = {currentItem = item.name, action = action}
 	item.queue_free()
 	

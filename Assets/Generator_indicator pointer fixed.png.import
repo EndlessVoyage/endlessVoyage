@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jfmg70q6kujv"
-path="res://.godot/imported/Burning_Note 3.png-d41198cc52b6cdc14727cf6b792f3846.ctex"
+uid="uid://mlwdfmbqwvtn"
+path="res://.godot/imported/Generator_indicator pointer fixed.png-fa3f43254723e1a4cde3033d85558a61.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Burning_Note 3.png"
-dest_files=["res://.godot/imported/Burning_Note 3.png-d41198cc52b6cdc14727cf6b792f3846.ctex"]
+source_file="res://Assets/Generator_indicator pointer fixed.png"
+dest_files=["res://.godot/imported/Generator_indicator pointer fixed.png-fa3f43254723e1a4cde3033d85558a61.ctex"]
 
 [params]
 
