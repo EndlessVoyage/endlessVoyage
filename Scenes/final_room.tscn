@@ -22,9 +22,6 @@ size = Vector2(183, 170.5)
 [node name="finalroom" type="Node2D"]
 z_index = -1
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_ctclo")
-
 [node name="Node2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2DGround" type="CollisionShape2D" parent="Node2D"]
@@ -38,6 +35,9 @@ shape = SubResource("SegmentShape2D_yweyi")
 [node name="CollisionShape2DWallRight" type="CollisionShape2D" parent="Node2D"]
 position = Vector2(-962, -12)
 shape = SubResource("SegmentShape2D_e8g81")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ctclo")
 
 [node name="finalnote" type="StaticBody2D" parent="."]
 script = ExtResource("2_55mqn")

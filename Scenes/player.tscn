@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://7qjcev48nt2n"]
+[gd_scene load_steps=38 format=3 uid="uid://7qjcev48nt2n"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_nws5r"]
 [ext_resource type="Texture2D" uid="uid://bb5nvwqd08vyx" path="res://Assets/Burning_Player 1.png" id="2_4ampj"]
@@ -29,6 +29,8 @@
 [ext_resource type="Texture2D" uid="uid://d3v03sk0bfx8g" path="res://Assets/Fire_Extinguisher_.png" id="19_hr6v3"]
 [ext_resource type="AudioStream" uid="uid://chhrdrpd8uhfl" path="res://Assets/sound/extinguish.mp3" id="21_s7amo"]
 [ext_resource type="AudioStream" uid="uid://p7cupsjan108" path="res://Assets/sound/cantperformaction.mp3" id="29_3icl4"]
+[ext_resource type="AudioStream" uid="uid://4rwrpcvlm1i8" path="res://Assets/sound/unlockingdoor.mp3" id="30_grcji"]
+[ext_resource type="AudioStream" uid="uid://b78kk72463q36" path="res://Assets/sound/open door.mp3" id="31_cielb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xe4l7"]
 animations = [{
@@ -233,5 +235,11 @@ wait_time = 2.0
 [node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("29_3icl4")
 volume_db = 16.865
+
+[node name="AudioStreamPlayer2D3" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("30_grcji")
+
+[node name="AudioStreamPlayer2D4" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("31_cielb")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
