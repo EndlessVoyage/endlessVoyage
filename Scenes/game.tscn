@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bte1rjhys7ocd"]
+[gd_scene load_steps=5 format=3 uid="uid://bte1rjhys7ocd"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_ysnrm"]
 [ext_resource type="PackedScene" uid="uid://7qjcev48nt2n" path="res://Scenes/player.tscn" id="2_qgfq2"]
-[ext_resource type="Script" path="res://Scripts/ItemUI.gd" id="5_48iin"]
-[ext_resource type="AudioStream" uid="uid://bu8x2hxobtus" path="res://Assets/sound/machine_room_burning.mp3" id="6_qdklg"]
+[ext_resource type="AudioStream" uid="uid://dbo86djuapgme" path="res://Assets/sound/machine_room_burning.mp3" id="6_qdklg"]
 [ext_resource type="Texture2D" uid="uid://icdmnqp3tpof" path="res://Assets/out of bounds.png" id="7_mykl0"]
 
 [node name="Game" type="Node"]
@@ -41,7 +40,6 @@ grow_vertical = 0
 size_flags_horizontal = 8
 size_flags_vertical = 8
 expand_mode = 1
-script = ExtResource("5_48iin")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_qdklg")

@@ -1,6 +1,6 @@
 extends Node
 
-signal item_to_ui(item)
+signal player_burns
 
 var itemInSlot = 0
 const levels = {
@@ -14,6 +14,7 @@ func _ready():
 	change_room("machine_room", true)
 	$Timer.connect("timeout", _on_timer_timeout)
 	$Timer2.connect("timeout",_death)
+	$Player/ItemUI.set_texture(preload("res://Assets/Hand.png"))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -22,7 +23,7 @@ func _process(_delta):
 func _on_player_do_action(asset_type, args):
 	match asset_type:
 		"item": 
-			item_to_ui.emit(args[0])
+			$Player/ItemUI.set_texture(args[0].texture)
 		"door":
 			change_room(args[0])
 		"Killing_Object":
@@ -42,7 +43,6 @@ func change_room(room = "", is_init = false):
 	else:
 		print("rescourse doesn't exist")
 	
-signal player_burns
 func _on_timer_timeout() -> void:
 	print("The Generator burned down. You died!")
 	player_burns.emit()
