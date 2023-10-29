@@ -104,7 +104,8 @@ func extinguished(generator):
 	generator.get_node("burned").visible = true
 	
 	get_parent().get_node("Timer").stop()
-
+	generator.get_node("../Barometer").visible = false
+	
 func break_open(door):
 	starting_animation = true
 	$breakingtimer.start()
