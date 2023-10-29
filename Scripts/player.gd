@@ -74,8 +74,8 @@ func handle_action(body: Node2D, from_body_entered = false):
 	if asset_type == "" or args == []:
 		return
 	
-	if (asset_type == "puzzle") and from_body_entered:
-		#Puzzles must be activated manually
+	if (asset_type == "puzzle" or asset_type == "item") and from_body_entered:
+		#Puzzles and items must be activated manually
 		return
 	do_action.emit(asset_type, args)
 
