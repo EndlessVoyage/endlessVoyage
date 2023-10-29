@@ -7,12 +7,6 @@ This game was build on the [Hetzner Game Jam 2023](https://gamejam.hetzner.com)
 
 You can play it online here: https://endlessvoyage.de
 
-You can grab the binarys here:
-
-[Windows](https://endlessvoyage.de/win.zip)
-[Linux](https://endlessvoyage.de/linux.zip)
-[Android](https://endlessvoyage.de/android.zip)
-
 This game uses music from https://www.fesliyanstudios.com
 Namely:
 - Predator & Prey by David Robson
