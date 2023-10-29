@@ -64,6 +64,8 @@ func _death():
 func handle_item(item: Node2D, action: String):
 	if action == "break_open":
 		picked_up_chandelier.emit()
+	if action == "read":
+		_death()
 	if !item.has_node("Sprite2D"):
 		print("-E- Item doesn't contain a Sprite2D")
 	else:

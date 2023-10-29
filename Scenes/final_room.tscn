@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bg475pojgba2u"]
+[gd_scene load_steps=8 format=3 uid="uid://cyeqj3sngvm5j"]
 
 [ext_resource type="Texture2D" uid="uid://dwekiigcvlb7f" path="res://Assets/final_room_background.png" id="1_ctclo"]
 [ext_resource type="Script" path="res://Scenes/finalnote.gd" id="2_55mqn"]
@@ -17,7 +17,7 @@ a = Vector2(1913, -535)
 b = Vector2(1917, 538)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l6qnj"]
-size = Vector2(183, 170.5)
+size = Vector2(183, 339.25)
 
 [node name="finalroom" type="Node2D"]
 z_index = -1
@@ -43,8 +43,9 @@ texture = ExtResource("1_ctclo")
 script = ExtResource("2_55mqn")
 
 [node name="Sprite2D" type="Sprite2D" parent="finalnote"]
+position = Vector2(-878, 0)
 texture = ExtResource("3_beom6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="finalnote"]
-position = Vector2(-105, 86.75)
+position = Vector2(-990, 151.375)
 shape = SubResource("RectangleShape2D_l6qnj")
