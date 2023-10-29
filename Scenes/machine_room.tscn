@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://86e7vue4q2t"]
+[gd_scene load_steps=14 format=3 uid="uid://d4eheam372ip8"]
 
 [ext_resource type="PackedScene" uid="uid://hra2ovmtnnbg" path="res://Scenes/Items/fire_extinguisher.tscn" id="2_ift5f"]
 [ext_resource type="Texture2D" uid="uid://chh6p6khenncr" path="res://Assets/machineroom_background.png" id="2_triye"]
@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://5m0p8x2wph2l" path="res://Assets/Beer.png" id="5_1jjcv"]
 [ext_resource type="AudioStream" uid="uid://dbo86djuapgme" path="res://Assets/sound/machine_room_burning.mp3" id="6_7x5p1"]
 [ext_resource type="Script" path="res://Scripts/Barometer.gd" id="6_66nsk"]
-[ext_resource type="Texture2D" uid="uid://dgnbl25spydvj" path="res://Assets/Generator_indicator.png" id="6_kiwup"]
+[ext_resource type="Texture2D" uid="uid://ygukg6p723fp" path="res://Assets/Generator_indicator.png" id="6_kiwup"]
 [ext_resource type="Texture2D" uid="uid://mlwdfmbqwvtn" path="res://Assets/Generator_indicator pointer fixed.png" id="7_ilpiy"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_kg6w8"]
@@ -71,6 +71,7 @@ texture = ExtResource("5_1jjcv")
 stream = ExtResource("6_7x5p1")
 volume_db = 9.0
 autoplay = true
+
 [node name="Barometer" type="Node2D" parent="."]
 script = ExtResource("6_66nsk")
 
