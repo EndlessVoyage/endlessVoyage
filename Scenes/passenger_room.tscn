@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cueespbfoojqd"]
+[gd_scene load_steps=22 format=3 uid="uid://cueespbfoojqd"]
 
 [ext_resource type="Texture2D" uid="uid://dq14kn8kgb2xv" path="res://Assets/passenger_room_background.png" id="1_pbr01"]
 [ext_resource type="Script" path="res://Scripts/Chandelier.gd" id="2_jiloi"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cn8o6fwlijdq7" path="res://Assets/_Chandelier_Broken shining 1.png" id="6_vkeu2"]
 [ext_resource type="Texture2D" uid="uid://dqtuonecljifk" path="res://Assets/Chandelier_Broken shining 2.png" id="7_mails"]
 [ext_resource type="Texture2D" uid="uid://ivxgtdyqqp02" path="res://Assets/Chandelier_Broken shining 3.png" id="8_xdkas"]
+[ext_resource type="AudioStream" uid="uid://bpw2yup7nm6v0" path="res://Assets/sound/Sewers - Horror Ambience - Gravity Sound.wav" id="13_vsss8"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_yj8s5"]
 a = Vector2(2599, 538)
@@ -133,6 +134,11 @@ texture = ExtResource("6_osei7")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="piece_of_chandelier"]
 position = Vector2(-777, 341)
 shape = SubResource("RectangleShape2D_ahry6")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_vsss8")
+volume_db = 9.0
+autoplay = true
 
 [connection signal="body_entered" from="Trigger" to="Chandelier" method="_on_trigger_body_entered"]
 [connection signal="body_entered" from="Trigger" to="Trigger/CollisionShape2DTrigger" method="_on_trigger_body_entered"]
