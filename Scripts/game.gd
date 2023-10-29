@@ -1,6 +1,7 @@
 extends Node
 
 signal player_burns
+signal picked_up_chandelier
 
 var itemInSlot = {currentItem = "", action = ""}
 const levels = {
@@ -20,7 +21,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
-
 func _on_player_do_action(asset_type, args):
 	match asset_type:
 		"item":
@@ -57,7 +57,11 @@ func _on_timer_timeout() -> void:
 func _death():
 	get_tree().change_scene_to_file("res://Scenes/death_transition.tscn")
 
+
+
 func handle_item(item: Node2D, action: String):
+	if action == "break_open":
+		picked_up_chandelier.emit()
 	if !item.has_node("Sprite2D"):
 		print("-E- Item doesn't contain a Sprite2D")
 	else:
