@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://86e7vue4q2t"]
+[gd_scene load_steps=9 format=3 uid="uid://d4eheam372ip8"]
 
 [ext_resource type="PackedScene" uid="uid://hra2ovmtnnbg" path="res://Scenes/Items/fire_extinguisher.tscn" id="2_ift5f"]
 [ext_resource type="Texture2D" uid="uid://chh6p6khenncr" path="res://Assets/machineroom_background.png" id="2_triye"]
