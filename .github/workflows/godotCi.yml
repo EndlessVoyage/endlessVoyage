@@ -42,7 +42,7 @@ jobs:
           folder: /home/runner/.local/share/godot/builds/web                 
 
       - name: Get Unix Timestamp
-        run: echo "TIMESTAMP=$(gdate +%s)" >> $GITHUB_ENV
+        run: echo "TIMESTAMP=$(date +%s)" >> $GITHUB_ENV
 
       - name: Create Release
         uses: ncipollo/release-action@v1.12.0
