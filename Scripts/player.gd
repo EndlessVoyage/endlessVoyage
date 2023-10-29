@@ -105,10 +105,12 @@ func extinguished(generator):
 	
 	get_parent().get_node("Timer").stop()
 
-func break_open():
+func break_open(door):
 	starting_animation = true
 	$breakingtimer.start()
 	$AnimatedSprite2D.play("door_breaking")
+	door.ASSET_TYPE = "door"
+	door.ARGS = ["machine_room"]
 	
 	
 func solve_puzzle(puzzleNode: Node2D):
@@ -116,7 +118,7 @@ func solve_puzzle(puzzleNode: Node2D):
 		"Generator":
 			extinguish(puzzleNode)
 		"OfficeDoor":
-			break_open()
+			break_open(puzzleNode)
 	
 func _burn():
 	starting_animation = true
