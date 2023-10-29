@@ -1,9 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://cueespbfoojqd"]
+[gd_scene load_steps=16 format=3 uid="uid://cueespbfoojqd"]
 
 [ext_resource type="Texture2D" uid="uid://dq14kn8kgb2xv" path="res://Assets/passenger_room_background.png" id="1_pbr01"]
+[ext_resource type="Script" path="res://Scenes/OfficeDoor.gd" id="2_eiyvi"]
 [ext_resource type="Script" path="res://Scripts/Chandelier.gd" id="2_jiloi"]
+[ext_resource type="Texture2D" uid="uid://wpp2jngdv78h" path="res://Assets/passenger_room_door.png" id="3_2lhic"]
 [ext_resource type="Texture2D" uid="uid://n41x4ce7gwff" path="res://Assets/Chandelier.png" id="3_7qlyx"]
 [ext_resource type="Script" path="res://Scripts/trigger.gd" id="4_4hm4u"]
+[ext_resource type="Script" path="res://Scripts/piece_of_chandelier.gd" id="5_eel7x"]
+[ext_resource type="Texture2D" uid="uid://32p8lwxwucq2" path="res://Assets/Broken Piece Of Chandelier.png" id="6_osei7"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_yj8s5"]
 a = Vector2(2599, 538)
@@ -17,12 +21,18 @@ b = Vector2(-1915, 421)
 a = Vector2(1913, -535)
 b = Vector2(1917, 538)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xqotd"]
+size = Vector2(316, 661)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_auj61"]
 size = Vector2(303, 378.25)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_2ny8y"]
 a = Vector2(-678, 1)
 b = Vector2(-685, 425)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ahry6"]
+size = Vector2(90, 127.25)
 
 [node name="PassengerRoom" type="Node2D"]
 z_index = -1
@@ -44,6 +54,16 @@ shape = SubResource("SegmentShape2D_grfsy")
 [node name="CollisionShape2DWallRight" type="CollisionShape2D" parent="Node2D"]
 shape = SubResource("SegmentShape2D_gbig2")
 
+[node name="OfficeDoor" type="StaticBody2D" parent="Node2D"]
+script = ExtResource("2_eiyvi")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/OfficeDoor"]
+texture = ExtResource("3_2lhic")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/OfficeDoor"]
+position = Vector2(1202, 86.5)
+shape = SubResource("RectangleShape2D_xqotd")
+
 [node name="Chandelier" type="CharacterBody2D" parent="."]
 collision_layer = 3
 collision_mask = 2
@@ -62,8 +82,20 @@ shape = SubResource("RectangleShape2D_auj61")
 script = ExtResource("4_4hm4u")
 
 [node name="CollisionShape2DTrigger" type="CollisionShape2D" parent="Trigger"]
-position = Vector2(-332, -3)
+position = Vector2(50, -3)
 shape = SubResource("SegmentShape2D_2ny8y")
+
+[node name="piece_of_chandelier" type="StaticBody2D" parent="."]
+script = ExtResource("5_eel7x")
+
+[node name="Sprite2D" type="Sprite2D" parent="piece_of_chandelier"]
+position = Vector2(-775, 356)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("6_osei7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="piece_of_chandelier"]
+position = Vector2(-777, 341)
+shape = SubResource("RectangleShape2D_ahry6")
 
 [connection signal="body_entered" from="Trigger" to="Chandelier" method="_on_trigger_body_entered"]
 [connection signal="body_entered" from="Trigger" to="Trigger/CollisionShape2DTrigger" method="_on_trigger_body_entered"]

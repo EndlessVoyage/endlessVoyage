@@ -17,6 +17,7 @@ func _process(delta):
 	if get_slide_collision_count() >= 1:
 		get_node("Sprite2D").set_texture(preload("res://Assets/Chandelier Broken.png"))
 		ASSET_TYPE = "Misc_Object"
+		falling = false
+		
 func _on_trigger_body_entered(body):
-	print("achtung")
 	falling = true

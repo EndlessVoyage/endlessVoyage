@@ -16,6 +16,7 @@ func _ready():
 	screen_size = Vector2(3840,1080)
 	$AnimatedSprite2D.play("standing_up")
 	get_parent().player_burns.connect(_burn)
+	$breakingtimer.connect("timeout", _on_timer_timeout)
 	
 func _process(delta):
 	var newVelocity = Vector2.ZERO
@@ -73,8 +74,8 @@ func handle_action(body: Node2D, from_body_entered = false):
 	if asset_type == "" or args == []:
 		return
 	
-	if (asset_type == "puzzle") and from_body_entered:
-		#Puzzles must be activated manually
+	if (asset_type == "puzzle" or asset_type == "item") and from_body_entered:
+		#Puzzles and items must be activated manually
 		return
 	do_action.emit(asset_type, args)
 
@@ -99,12 +100,23 @@ func extinguished(generator):
 	generator.get_node("burned").visible = true
 	gotFireExtinguisher = false
 	get_parent().get_node("Timer").stop()
+
+func break_open():
+	starting_animation = true
+	$breakingtimer.start()
+	$AnimatedSprite2D.play("door_breaking")
+	
 	
 func solve_puzzle(puzzleNode: Node2D):
 	match puzzleNode.name:
 		"Generator":
 			extinguish(puzzleNode)
+		"OfficeDoor":
+			break_open()
 	
 func _burn():
-	$AnimatedSprite2D.play("burning")
 	starting_animation = true
+	$AnimatedSprite2D.play("burning")
+	
+func _on_timer_timeout():
+	starting_animation = false

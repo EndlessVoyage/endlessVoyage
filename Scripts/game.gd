@@ -8,13 +8,14 @@ const levels = {
 	passenger_room = "res://Scenes/passenger_room.tscn"
 }
 var activeLevel: Node2D = null
+const HAND_SPRITE = "res://Assets/Hand.png"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	change_room("machine_room", true)
 	$Timer.connect("timeout", _on_timer_timeout)
 	$Timer2.connect("timeout",_death)
-	$Player/ItemUI.set_texture(preload("res://Assets/Hand.png"))
+	$Player/ItemUI.set_texture(preload(HAND_SPRITE))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -42,6 +43,8 @@ func change_room(room = "", is_init = false):
 		newPosition = Vector2(1922, 535)
 		result.position = newPosition
 		self.add_child(result)
+		if room == "passenger_room":
+			$Player.position = Vector2(3338, 907)
 	else:
 		print("rescourse doesn't exist")
 	
@@ -72,6 +75,7 @@ func attempt_puzzle(puzzleNode: Node2D):
 		return
 	if puzzleNode.process_puzzle_solution(itemInSlot.action):
 		$Player.solve_puzzle(puzzleNode)
+		$Player/ItemUI.set_texture(preload(HAND_SPRITE))
 		itemInSlot.currentItem = ""
 
 func on_death():

@@ -27,17 +27,14 @@ jobs:
       - name: Activate dirty Githubpages-File
         run: sed -i -e 's/<head>/<head><script src="enable-threads.js"><\/script>/g' /home/runner/.local/share/godot/builds/web/index.html
 
-      - name: Copy Windows zip to web deploy dir
-        run: cp /home/runner/.local/share/godot/archives/win.zip /home/runner/.local/share/godot/builds/web
+      #- name: Copy Windows zip to web deploy dir
+        #run: cp /home/runner/.local/share/godot/archives/win.zip /home/runner/.local/share/godot/builds/web
 
-      - name: Copy Linux zip to web deploy dir
-        run: cp /home/runner/.local/share/godot/archives/linux.zip /home/runner/.local/share/godot/builds/web
+      #- name: Copy Linux zip to web deploy dir
+        #run: cp /home/runner/.local/share/godot/archives/linux.zip /home/runner/.local/share/godot/builds/web
 
-      - name: Copy Android zip to web deploy dir
-        run: cp /home/runner/.local/share/godot/archives/android.zip /home/runner/.local/share/godot/builds/web
-
-      - name: Copy index.html
-        run: mkdir /home/runner/work/endlessVoyage/endlessVoyage/dummyWeb && cp /home/runner/work/endlessVoyage/endlessVoyage/index.html /home/runner/work/endlessVoyage/endlessVoyage/dummyWeb
+      #- name: Copy Android zip to web deploy dir
+        #run: cp /home/runner/.local/share/godot/archives/android.zip /home/runner/.local/share/godot/builds/web
 
       - name: Deploy to GitHub Pages        
         uses: JamesIves/github-pages-deploy-action@releases/v4

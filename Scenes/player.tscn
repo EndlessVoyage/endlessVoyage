@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://7qjcev48nt2n"]
+[gd_scene load_steps=35 format=3 uid="uid://7qjcev48nt2n"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_nws5r"]
 [ext_resource type="Texture2D" uid="uid://bb5nvwqd08vyx" path="res://Assets/Burning_Player 1.png" id="2_4ampj"]
@@ -16,7 +16,10 @@
 [ext_resource type="Texture2D" uid="uid://dg57lt34i2v82" path="res://Assets/player_walk_2.png" id="5_m65ci"]
 [ext_resource type="Texture2D" uid="uid://rl756h8sfldt" path="res://Assets/player_walk_3.png" id="6_7j81t"]
 [ext_resource type="Texture2D" uid="uid://sjnimw3hkqpy" path="res://Assets/Player_Standing_Up_4.png" id="6_orkwm"]
+[ext_resource type="Texture2D" uid="uid://46od6jyehtq5" path="res://Assets/Player_Door_Breaking.png" id="6_s5gel"]
 [ext_resource type="Texture2D" uid="uid://ba6iu01jfqs4t" path="res://Assets/Player_Standing_Up_5.png" id="7_e3ugj"]
+[ext_resource type="Texture2D" uid="uid://p26436knyp83" path="res://Assets/Player_Door_Breaking 2.png" id="7_eqt4k"]
+[ext_resource type="Texture2D" uid="uid://82amp2fovepu" path="res://Assets/Player_Door_Breaking 3.png" id="8_47r6q"]
 [ext_resource type="Texture2D" uid="uid://8aje1004dxsp" path="res://Assets/Player_Standing_Up_6.png" id="8_s16ip"]
 [ext_resource type="AudioStream" uid="uid://cjgsvb6xqtlxa" path="res://Assets/sound/footsteps.mp3" id="8_we63j"]
 [ext_resource type="Texture2D" uid="uid://bovv0ubytngvq" path="res://Assets/Player_Standing_Up_7.png" id="9_etobh"]
@@ -43,6 +46,20 @@ animations = [{
 }],
 "loop": true,
 "name": &"burning",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_s5gel")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eqt4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_47r6q")
+}],
+"loop": true,
+"name": &"door_breaking",
 "speed": 5.0
 }, {
 "frames": [{
@@ -149,7 +166,7 @@ script = ExtResource("1_nws5r")
 position = Vector2(-105.5, -332)
 scale = Vector2(0.753, 0.753)
 sprite_frames = SubResource("SpriteFrames_xe4l7")
-animation = &"burning"
+animation = &"door_breaking"
 
 [node name="PlayerHolding" type="Sprite2D" parent="."]
 visible = false
@@ -208,5 +225,8 @@ position = Vector2(-63, -183)
 scale = Vector2(189.094, 114.812)
 blend_mode = 2
 texture = SubResource("GradientTexture2D_h5dup")
+
+[node name="breakingtimer" type="Timer" parent="."]
+wait_time = 2.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
