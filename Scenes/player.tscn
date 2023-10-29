@@ -226,4 +226,7 @@ scale = Vector2(189.094, 114.812)
 blend_mode = 2
 texture = SubResource("GradientTexture2D_h5dup")
 
+[node name="breakingtimer" type="Timer" parent="."]
+wait_time = 2.0
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
