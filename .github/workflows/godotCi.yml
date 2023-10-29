@@ -30,24 +30,24 @@ jobs:
         run: cp /home/runner/work/endlessVoyage/endlessVoyage/enable-threads.js /home/runner/.local/share/godot/builds/web
 
       - name: Activate dirty Githubpages-File
-        run: sed -i -e 's/<head>/<head><script src="enable-threads.js"><\/script>/g' /home/runner/.local/share/godot/builds/web/index.html
+        run: sed -i -e 's/<head>/<head><script src="enable-threads.js"><\/script>/g' /home/runner/.local/share/godot/builds/endlessvoyage_web/index.html
 
       - name: Copy Windows zip to web deploy dir
-        run: cp /home/runner/.local/share/godot/archives/endlessvoyage_windows.zip /home/runner/.local/share/godot/builds/web
+        run: cp /home/runner/.local/share/godot/archives/endlessvoyage_windows.zip /home/runner/.local/share/godot/builds/endlessvoyage_web
 
       - name: Copy Web zip to web deploy dir
-        run: cp /home/runner/.local/share/godot/archives/endlessvoyage_web.zip /home/runner/.local/share/godot/builds/web        
+        run: cp /home/runner/.local/share/godot/archives/endlessvoyage_web.zip /home/runner/.local/share/godot/builds/endlessvoyage_web        
 
       - name: Copy Linux zip to web deploy dir
-        run: cp /home/runner/.local/share/godot/archives/endlessvoyage_linux.zip /home/runner/.local/share/godot/builds/web
+        run: cp /home/runner/.local/share/godot/archives/endlessvoyage_linux.zip /home/runner/.local/share/godot/builds/endlessvoyage_web
 
       - name: Copy Android zip to web deploy dir
-        run: cp /home/runner/.local/share/godot/archives/endlessvoyage_android.zip /home/runner/.local/share/godot/builds/web
+        run: cp /home/runner/.local/share/godot/archives/endlessvoyage_android.zip /home/runner/.local/share/godot/builds/endlessvoyage_web
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: /home/runner/.local/share/godot/builds/web/
+          path: /home/runner/.local/share/godot/builds/endlessvoyage_web/
     
       - name: Deploy to GitHub Pages
         id: deployment
