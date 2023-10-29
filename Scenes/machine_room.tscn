@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c74jeslsoskby" path="res://Scenes/Environment/generator.tscn" id="4_ue8cj"]
 [ext_resource type="Script" path="res://Scripts/Ladder.gd" id="4_wkces"]
 [ext_resource type="Texture2D" uid="uid://5m0p8x2wph2l" path="res://Assets/Beer.png" id="5_1jjcv"]
+[ext_resource type="AudioStream" uid="uid://dbo86djuapgme" path="res://Assets/sound/machine_room_burning.mp3" id="6_7x5p1"]
 [ext_resource type="Script" path="res://Scripts/Barometer.gd" id="6_66nsk"]
 [ext_resource type="Texture2D" uid="uid://bn1fhkss1fwof" path="res://Assets/Generator_indicator.png" id="6_kiwup"]
 [ext_resource type="Texture2D" uid="uid://mlwdfmbqwvtn" path="res://Assets/Generator_indicator pointer fixed.png" id="7_ilpiy"]
@@ -72,6 +73,10 @@ position = Vector2(-43, 338)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("5_1jjcv")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_7x5p1")
+volume_db = 9.0
+autoplay = true
 [node name="Barometer" type="Node2D" parent="."]
 script = ExtResource("6_66nsk")
 
