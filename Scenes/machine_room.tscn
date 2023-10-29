@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://86e7vue4q2t"]
+[gd_scene load_steps=14 format=3 uid="uid://86e7vue4q2t"]
 
 [ext_resource type="PackedScene" uid="uid://hra2ovmtnnbg" path="res://Scenes/Items/fire_extinguisher.tscn" id="2_ift5f"]
 [ext_resource type="Texture2D" uid="uid://chh6p6khenncr" path="res://Assets/machineroom_background.png" id="2_triye"]
@@ -35,12 +35,9 @@ texture = ExtResource("2_triye")
 [node name="FireExtinguisher" parent="." instance=ExtResource("2_ift5f")]
 position = Vector2(-1227, 244)
 scale = Vector2(0.585, 0.585)
-collision_layer = 2
-collision_mask = 2
 
 [node name="Generator" parent="." instance=ExtResource("4_ue8cj")]
 position = Vector2(417, 59)
-collision_layer = 2
 
 [node name="Timer" type="Timer" parent="Generator"]
 wait_time = 30.0
@@ -77,6 +74,7 @@ texture = ExtResource("5_1jjcv")
 stream = ExtResource("6_7x5p1")
 volume_db = 9.0
 autoplay = true
+
 [node name="Barometer" type="Node2D" parent="."]
 script = ExtResource("6_66nsk")
 
