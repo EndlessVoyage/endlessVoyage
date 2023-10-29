@@ -7,6 +7,7 @@ var gotFireExtinguisher = false
 var timer = Timer.new()
 
 signal do_action(asset_type: String, args)
+signal burn_death
 
 func _ready():
 	# Size of area always size of player collision
@@ -22,8 +23,6 @@ func _process(delta):
 	if Input.is_action_just_pressed("ui_accept"):		
 		for body in $Area2D.get_overlapping_bodies():
 			handle_action(body)
-			if body.name == "Generator" and gotFireExtinguisher:
-				extinguish(body)
 
 	if $AnimatedSprite2D.frame == 10:
 		starting_animation = false	
@@ -62,9 +61,9 @@ func start(pos):
 	$CollisionShape2D.disabled = false
 
 func _on_area_2d_body_entered(body):
-	handle_action(body)
+	handle_action(body, true)
 
-func handle_action(body: Node2D):
+func handle_action(body: Node2D, from_body_entered = false):
 	var asset_type = ""
 	var args = []
 	if "ASSET_TYPE" in body:
@@ -73,12 +72,10 @@ func handle_action(body: Node2D):
 		args = body["ARGS"]
 	if asset_type == "" or args == []:
 		return
-		
-	if args:
-		if asset_type == "item":
-			if args[1] == "extinguish":
-				gotFireExtinguisher = true
-
+	
+	if (asset_type == "puzzle") and from_body_entered:
+		#Puzzles must be activated manually
+		return
 	do_action.emit(asset_type, args)
 
 func extinguish(generator):
@@ -103,7 +100,11 @@ func extinguished(generator):
 	gotFireExtinguisher = false
 	get_parent().get_node("Timer").stop()
 	
-signal burn_death
+func solve_puzzle(puzzleNode: Node2D):
+	match puzzleNode.name:
+		"Generator":
+			extinguish(puzzleNode)
+	
 func _burn():
 	$AnimatedSprite2D.play("burning")
 	starting_animation = true

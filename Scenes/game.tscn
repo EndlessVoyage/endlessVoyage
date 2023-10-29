@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bte1rjhys7ocd"]
+[gd_scene load_steps=5 format=3 uid="uid://bte1rjhys7ocd"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_ysnrm"]
 [ext_resource type="PackedScene" uid="uid://7qjcev48nt2n" path="res://Scenes/player.tscn" id="2_qgfq2"]
@@ -41,7 +41,6 @@ grow_vertical = 0
 size_flags_horizontal = 8
 size_flags_vertical = 8
 expand_mode = 1
-script = ExtResource("5_48iin")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_qdklg")

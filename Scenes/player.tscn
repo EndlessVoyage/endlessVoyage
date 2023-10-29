@@ -200,6 +200,7 @@ stream = ExtResource("8_we63j")
 [node name="extinguishing" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(-1, 2)
 stream = ExtResource("21_s7amo")
+volume_db = 15.958
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 visible = false
