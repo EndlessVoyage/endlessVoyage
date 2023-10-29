@@ -1,3 +1,50 @@
-[gd_scene format=3 uid="uid://bg475pojgba2u"]
+[gd_scene load_steps=8 format=3 uid="uid://bg475pojgba2u"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://dwekiigcvlb7f" path="res://Assets/final_room_background.png" id="1_ctclo"]
+[ext_resource type="Script" path="res://Scenes/finalnote.gd" id="2_55mqn"]
+[ext_resource type="Texture2D" uid="uid://but4xv3dku1vj" path="res://Assets/Note in final room.png" id="3_beom6"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_lewg5"]
+a = Vector2(1646, 534)
+b = Vector2(-279, 533)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_yweyi"]
+a = Vector2(-1912, -523)
+b = Vector2(-1915, 421)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_e8g81"]
+a = Vector2(1913, -535)
+b = Vector2(1917, 538)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l6qnj"]
+size = Vector2(183, 170.5)
+
+[node name="finalroom" type="Node2D"]
+z_index = -1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ctclo")
+
+[node name="Node2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2DGround" type="CollisionShape2D" parent="Node2D"]
+position = Vector2(-687, -117)
+shape = SubResource("SegmentShape2D_lewg5")
+
+[node name="CollisionShape2WallLeft" type="CollisionShape2D" parent="Node2D"]
+position = Vector2(957, -4)
+shape = SubResource("SegmentShape2D_yweyi")
+
+[node name="CollisionShape2DWallRight" type="CollisionShape2D" parent="Node2D"]
+position = Vector2(-962, -12)
+shape = SubResource("SegmentShape2D_e8g81")
+
+[node name="finalnote" type="StaticBody2D" parent="."]
+script = ExtResource("2_55mqn")
+
+[node name="Sprite2D" type="Sprite2D" parent="finalnote"]
+texture = ExtResource("3_beom6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="finalnote"]
+position = Vector2(-105, 86.75)
+shape = SubResource("RectangleShape2D_l6qnj")

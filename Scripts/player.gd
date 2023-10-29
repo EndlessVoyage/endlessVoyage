@@ -110,7 +110,7 @@ func break_open(door):
 	$breakingtimer.start()
 	$AnimatedSprite2D.play("door_breaking")
 	door.ASSET_TYPE = "door"
-	door.ARGS = ["machine_room"]
+	door.ARGS = ["final_room"]
 	
 	
 func solve_puzzle(puzzleNode: Node2D):
