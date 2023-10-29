@@ -6,6 +6,7 @@ const TRANSITION_SPEED = 1.5 # lower is faster
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$AnimatedSprite2D.play("default")
+	$AudioStreamPlayer2D.play()
 
 
 # Once the transition is done, we reset the game
