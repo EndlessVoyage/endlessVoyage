@@ -9,13 +9,13 @@ You can play it online here: https://endlessvoyage.de
 
 The binarys can be downloaded here: 
 
-[Windows](https://endlessvoyage.de/endlessvoyage_windows.zip)
+[Windows](https://endlessvoyage.de/bin/endlessvoyage_windows.zip)
 
-[Android](https://endlessvoyage.de/endlessvoyage_android.zip)
+[Android](https://endlessvoyage.de/bin/endlessvoyage_android.zip)
 
-[Linux](https://endlessvoyage.de/endlessvoyage_linux.zip)
+[Linux](https://endlessvoyage.de/bin/endlessvoyage_linux.zip)
 
-[Web](https://endlessvoyage.de/endlessvoyage_web.zip)
+[Web](https://endlessvoyage.de/bin/endlessvoyage_web.zip)
 
 ---
 

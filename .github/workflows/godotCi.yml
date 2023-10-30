@@ -21,7 +21,7 @@ jobs:
         id: export
         uses: firebelley/godot-export@v5.2.0
         with:
-          godot_executable_download_url: https://downloads.tuxfamily.org/godotengine/4.1.2/Godot_v4.1.2-stable_linux.x86_64.zip 
+          godot_executable_download_url: https://downloads.tuxfamily.org/godotengine/4.1.2/Godot_v4.1.2-stable_linux.x86_64.zip
           godot_export_templates_download_url: https://downloads.tuxfamily.org/godotengine/4.1.2/Godot_v4.1.2-stable_export_templates.tpz
           relative_project_path: ./
           archive_output: true
@@ -32,24 +32,27 @@ jobs:
       - name: Activate dirty Githubpages-File
         run: sed -i -e 's/<head>/<head><script src="enable-threads.js"><\/script>/g' /home/runner/.local/share/godot/builds/endlessvoyage_web/index.html
 
+      - name: Make bin dir
+        run: mkdir /home/runner/.local/share/godot/builds/endlessvoyage_web/bin
+
       - name: Copy Windows zip to web deploy dir
-        run: cp /home/runner/.local/share/godot/archives/endlessvoyage_windows.zip /home/runner/.local/share/godot/builds/endlessvoyage_web
+        run: cp /home/runner/.local/share/godot/archives/endlessvoyage_windows.zip /home/runner/.local/share/godot/builds/endlessvoyage_web/bin
 
       - name: Copy Web zip to web deploy dir
-        run: cp /home/runner/.local/share/godot/archives/endlessvoyage_web.zip /home/runner/.local/share/godot/builds/endlessvoyage_web        
+        run: cp /home/runner/.local/share/godot/archives/endlessvoyage_web.zip /home/runner/.local/share/godot/builds/endlessvoyage_web/bin
 
       - name: Copy Linux zip to web deploy dir
-        run: cp /home/runner/.local/share/godot/archives/endlessvoyage_linux.zip /home/runner/.local/share/godot/builds/endlessvoyage_web
+        run: cp /home/runner/.local/share/godot/archives/endlessvoyage_linux.zip /home/runner/.local/share/godot/builds/endlessvoyage_web/bin
 
       - name: Copy Android zip to web deploy dir
-        run: cp /home/runner/.local/share/godot/archives/endlessvoyage_android.zip /home/runner/.local/share/godot/builds/endlessvoyage_web
+        run: cp /home/runner/.local/share/godot/archives/endlessvoyage_android.zip /home/runner/.local/share/godot/builds/endlessvoyage_web/bin
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
           path: /home/runner/.local/share/godot/builds/endlessvoyage_web/
-    
+
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2    
+        uses: actions/deploy-pages@v2
 
