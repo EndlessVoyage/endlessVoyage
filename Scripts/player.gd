@@ -54,11 +54,14 @@ func _process(delta):
 			$AnimatedSprite2D.flip_h = false
 		else:
 			$AnimatedSprite2D.flip_h = true
-			
-		if $AnimatedSprite2D.is_playing() and !$AudioStreamPlayer2D.playing:
-			$AudioStreamPlayer2D.play()
-		elif !$AnimatedSprite2D.is_playing() and $AudioStreamPlayer2D.playing:
-			$AudioStreamPlayer2D.stop()
+		
+		if $AnimatedSprite2D.animation == "walk":
+			if $AnimatedSprite2D.is_playing() and !$Footsteps.playing:
+				$Footsteps.play()
+			elif !$AnimatedSprite2D.is_playing() and $Footsteps.playing:
+				$Footsteps.stop()
+		else:
+			$Footsteps.stop()
 	
 func start(pos):
 	position = pos
