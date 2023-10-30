@@ -7,6 +7,8 @@ This game was build on the [Hetzner Game Jam 2023](https://gamejam.hetzner.com)
 
 You can play it online here: https://endlessvoyage.de
 
+Some Browser have problems showing it (because of Github Pages), this will work on itch.io: https://endlessvoyage.itch.io/endlessvoyage
+
 The binarys can be downloaded here: 
 
 [Windows](https://endlessvoyage.de/bin/endlessvoyage_windows.zip)
