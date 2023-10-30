@@ -6,11 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://htrw1qyvh1wi" path="res://Assets/Burning_Note 3.png" id="3_hbpc5"]
 [ext_resource type="Texture2D" uid="uid://clmf13wdihqxf" path="res://Assets/Burning_Note 4.png" id="4_h4ijl"]
 [ext_resource type="Texture2D" uid="uid://0mt7vef6s8s1" path="res://Assets/Burning_Note 5.png" id="5_tmvur"]
-[ext_resource type="AudioStream" uid="uid://25pino5ix0nu" path="res://Assets/sound/deathsound1.mp3" id="6_hbbcp"]
 [ext_resource type="Texture2D" uid="uid://c7wm1rpxvv4mh" path="res://Assets/Note.png" id="8_wpgde"]
 [ext_resource type="Texture2D" uid="uid://043vhl6mp2y2" path="res://Assets/Note 2.png" id="9_yfbnj"]
 [ext_resource type="Texture2D" uid="uid://cmt65jknh4b58" path="res://Assets/Note 3.png" id="10_woo51"]
 [ext_resource type="Texture2D" uid="uid://ccllvdju2x2fq" path="res://Assets/Note 4.png" id="11_isl38"]
+[ext_resource type="AudioStream" uid="uid://bvowm21y1uub7" path="res://Assets/sound/burstintoflames.mp3" id="12_6eyav"]
 [ext_resource type="Texture2D" uid="uid://ekwgg4c3t5s7" path="res://Assets/Note 5.png" id="12_7pjnh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3rp1g"]
@@ -83,7 +83,7 @@ scale = Vector2(3381, 1760)
 texture = SubResource("CanvasTexture_t74vc")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_hbbcp")
+stream = ExtResource("12_6eyav")
 volume_db = 10.306
 attenuation = 0.0915052
 

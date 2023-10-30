@@ -15,6 +15,8 @@ func _process(delta):
 	
 	var color = $Sprite2D.modulate;
 	var newAlpha = 0.0
+	if !$AudioStreamPlayer2D.playing:
+		$AudioStreamPlayer2D.play()
 
 	if color.a <= 0:
 		is_ascending = true
