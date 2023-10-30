@@ -56,6 +56,12 @@ jobs:
       - name: List other dir
         run: ls -la ../../../.local/share/godot/builds/endlessvoyage_web       
 
+      - name: Run butler test
+        run: butler      
+
+      - name: Run butler live
+        run: butler push /home/runner/.local/share/godot/builds/endlessvoyage_web endlessvoyage/endlessvoyage:web
+
       - name: Publish to itch.io
         uses: KikimoraGames/itch-publish@v0.0.3
         with:
