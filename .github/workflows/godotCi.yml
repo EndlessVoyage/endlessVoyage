@@ -56,14 +56,14 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v2
 
-      #- name: Copy web dir for Butler
-        #run: mkdir .web & cp -R /home/runner/.local/share/godot/builds/endlessvoyage_web ./web
+      - name: Copy web dir for Butler
+        run: mkdir .web & cp -R /home/runner/.local/share/godot/builds/endlessvoyage_web ./web
 
-      #- name: Publish to itch.io
-        #uses: KikimoraGames/itch-publish@v0.0.3
-        #with:
-          #butlerApiKey: ${{secrets.BUTLER_API_KEY}}
-          #gameData: ./web
-          #itchUsername: EndlessVoyage
-          #itchGameId: EndlessVoyage
-          #buildChannel: web
+      - name: Publish to itch.io
+        uses: KikimoraGames/itch-publish@v0.0.3
+        with:
+          butlerApiKey: ${{secrets.BUTLER_API_KEY}}
+          gameData: ./web
+          itchUsername: EndlessVoyage
+          itchGameId: EndlessVoyage
+          buildChannel: web
