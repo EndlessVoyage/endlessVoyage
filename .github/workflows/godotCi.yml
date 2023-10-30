@@ -47,6 +47,15 @@ jobs:
       - name: Copy Android zip to web deploy dir
         run: cp /home/runner/.local/share/godot/archives/endlessvoyage_android.zip /home/runner/.local/share/godot/builds/endlessvoyage_web/bin
 
+      - name: Publish to itch.io
+        uses: KikimoraGames/itch-publish@v0.0.3
+        with:
+          butlerApiKey: ${{secrets.BUTLER_API_KEY}}
+          gameData: /home/runner/.local/share/godot/builds/endlessvoyage_web
+          itchUsername: EndlessVoyage
+          itchGameId: EndlessVoyage
+          buildChannel: web
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
@@ -55,11 +64,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
-
-      - uses: KikimoraGames/itch-publish@v0.0.3
-        with:
-          butlerApiKey: ${{secrets.BUTLER_API_KEY}}
-          gameData: /home/runner/.local/share/godot/builds/endlessvoyage_web
-          itchUsername: EndlessVoyage
-          itchGameId: EndlessVoyage
-          buildChannel: web
