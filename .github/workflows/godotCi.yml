@@ -47,26 +47,20 @@ jobs:
       - name: Copy Android zip to web deploy dir
         run: cp /home/runner/.local/share/godot/archives/endlessvoyage_android.zip /home/runner/.local/share/godot/builds/endlessvoyage_web/bin
 
-      - name: Output actual dir
-        run: pwd
+      - name: Copy web dir for Butler
+        run: mkdir .web & cp -R /home/runner/.local/share/godot/builds/endlessvoyage_web ./web
       
       - name: List dir
         run: ls -la .
 
       - name: List other dir
-        run: ls -la ../../../.local/share/godot/builds/endlessvoyage_web       
-
-      - name: Run butler test
-        run: butler      
-
-      - name: Run butler live
-        run: butler push /home/runner/.local/share/godot/builds/endlessvoyage_web endlessvoyage/endlessvoyage:web
+        run: ls -la ./web  
 
       - name: Publish to itch.io
         uses: KikimoraGames/itch-publish@v0.0.3
         with:
           butlerApiKey: ${{secrets.BUTLER_API_KEY}}
-          gameData: ../../../.local/share/godot/builds/endlessvoyage_web
+          gameData: ./web
           itchUsername: EndlessVoyage
           itchGameId: EndlessVoyage
           buildChannel: web
